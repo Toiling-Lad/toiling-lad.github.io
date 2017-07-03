@@ -4,7 +4,7 @@
     "build": "webpack",
     "client": "webpack-dev-server --port 3000",
     "start": "nf start",
-    "deploy": "git read-tree --prefix=dist/ -u toiling-lad.github.io/master:dist"
+    "deploy": "git push origin `git subtree split --prefix dist dev`:master"
   },
   "dependencies": {
     "ace-css": "1.1",
