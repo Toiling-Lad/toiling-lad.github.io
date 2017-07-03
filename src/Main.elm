@@ -12,7 +12,7 @@ type alias Model =
 
 init : ( Model, Cmd Msg )
 init =
-    ( "Hello World with Webpack", Cmd.none )
+    ( "Hello World with Webpack v2", Cmd.none )
 
 
 

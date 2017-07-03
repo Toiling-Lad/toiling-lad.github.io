@@ -3,7 +3,8 @@
     "api": "node api.js",
     "build": "webpack",
     "client": "webpack-dev-server --port 3000",
-    "start": "nf start"
+    "start": "nf start",
+    "deploy": "git read-tree --prefix=dist/ -u toiling-lad.github.io/master:dist"
   },
   "dependencies": {
     "ace-css": "1.1",
