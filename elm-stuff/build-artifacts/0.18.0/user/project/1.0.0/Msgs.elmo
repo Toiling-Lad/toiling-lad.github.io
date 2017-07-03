@@ -1,0 +1,9 @@
+var _user$project$Msgs$OnScroll = function (a) {
+	return {ctor: 'OnScroll', _0: a};
+};
+var _user$project$Msgs$OnLocationChange = function (a) {
+	return {ctor: 'OnLocationChange', _0: a};
+};
+var _user$project$Msgs$OnFetchProjects = function (a) {
+	return {ctor: 'OnFetchProjects', _0: a};
+};

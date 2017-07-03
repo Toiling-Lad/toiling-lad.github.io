@@ -1,0 +1,147 @@
+var _user$project$View$errorView = function (error) {
+	var _p0 = error;
+	if (_p0.ctor === 'Just') {
+		return _elm_lang$html$Html$text(_p0._0);
+	} else {
+		return _elm_lang$html$Html$text('');
+	}
+};
+var _user$project$View$notFoundView = A2(
+	_elm_lang$html$Html$div,
+	{ctor: '[]'},
+	{
+		ctor: '::',
+		_0: _elm_lang$html$Html$text('Not found'),
+		_1: {ctor: '[]'}
+	});
+var _user$project$View$projectPage = F2(
+	function (model, projectId) {
+		var _p1 = model.projects;
+		switch (_p1.ctor) {
+			case 'NotAsked':
+				return _elm_lang$html$Html$text('');
+			case 'Loading':
+				return _elm_lang$html$Html$text('Loading ...');
+			case 'Success':
+				var maybeProject = _elm_lang$core$List$head(
+					A2(
+						_elm_lang$core$List$filter,
+						function (project) {
+							return _elm_lang$core$Native_Utils.eq(project.id, projectId);
+						},
+						_p1._0));
+				var _p2 = maybeProject;
+				if (_p2.ctor === 'Just') {
+					return A2(_user$project$Pages_Project$view, _p2._0, model.projects);
+				} else {
+					return _user$project$Pages_Home$view(model.projects);
+				}
+			default:
+				return _elm_lang$html$Html$text(
+					_elm_lang$core$Basics$toString(_p1._0));
+		}
+	});
+var _user$project$View$page = function (model) {
+	var _p3 = model.route;
+	switch (_p3.ctor) {
+		case 'ProjectsRoute':
+			return _user$project$Pages_Home$view(model.projects);
+		case 'ProjectRoute':
+			return A2(_user$project$View$projectPage, model, _p3._0);
+		default:
+			return _user$project$View$notFoundView;
+	}
+};
+var _user$project$View$_p4 = _user$project$Styles_SharedStyles$styleNamespace;
+var _user$project$View$id = _user$project$View$_p4.id;
+var _user$project$View$class = _user$project$View$_p4.$class;
+var _user$project$View$navigationText = function (location) {
+	var _p5 = location;
+	if (_p5 === 'ProjectsRoute') {
+		return A2(
+			_elm_lang$svg$Svg$svg,
+			{
+				ctor: '::',
+				_0: _user$project$View$id(_user$project$Styles_SharedStyles$SvgIcon),
+				_1: {ctor: '[]'}
+			},
+			{ctor: '[]'});
+	} else {
+		return A2(
+			_elm_lang$svg$Svg$svg,
+			{
+				ctor: '::',
+				_0: _user$project$View$id(_user$project$Styles_SharedStyles$SvgIcon),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(_elm_community$elm_material_icons$Material_Icons_Hardware$keyboard_arrow_backspace, _elm_lang$core$Color$black, 25),
+				_1: {ctor: '[]'}
+			});
+	}
+};
+var _user$project$View$nav = function (model) {
+	var svgIcon = _user$project$View$navigationText(
+		_elm_lang$core$Basics$toString(model.route));
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _user$project$View$id(_user$project$Styles_SharedStyles$NavContainer),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$a,
+				{
+					ctor: '::',
+					_0: _user$project$View$id(_user$project$Styles_SharedStyles$NavTitle),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$href(_user$project$Routing_Router$projectsPath),
+						_1: {ctor: '[]'}
+					}
+				},
+				{
+					ctor: '::',
+					_0: svgIcon,
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('projects'),
+						_1: {
+							ctor: '::',
+							_0: _user$project$View$errorView(model.error),
+							_1: {ctor: '[]'}
+						}
+					}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$View$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _user$project$View$id(_user$project$Styles_SharedStyles$HeaderSection),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: _user$project$View$nav(model),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: _user$project$View$page(model),
+				_1: {ctor: '[]'}
+			}
+		});
+};

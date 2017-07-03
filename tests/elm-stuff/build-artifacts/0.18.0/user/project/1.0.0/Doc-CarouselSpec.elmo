@@ -1,0 +1,251 @@
+var _user$project$Doc_CarouselSpec$spec = A2(
+	_elm_community$elm_test$Test$describe,
+	'Carousel',
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_community$elm_test$Test$describe,
+			'#onwards',
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_community$elm_test$Test$test,
+					'Example: 1 -- `onwards { previous = 1, current = 2, ...`',
+					function (_p0) {
+						var _p1 = _p0;
+						return A2(
+							_elm_community$elm_test$Expect$equal,
+							_user$project$Carousel$onwards(
+								{
+									previous: 1,
+									current: 2,
+									next: 3,
+									rest: {ctor: '[]'}
+								}),
+							{
+								previous: 2,
+								current: 3,
+								next: 1,
+								rest: {ctor: '[]'}
+							});
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_community$elm_test$Test$test,
+						'Example: 2 -- `onwards { previous = 1, current = 2, ...`',
+						function (_p2) {
+							var _p3 = _p2;
+							return A2(
+								_elm_community$elm_test$Expect$equal,
+								_user$project$Carousel$onwards(
+									{
+										previous: 1,
+										current: 2,
+										next: 3,
+										rest: {
+											ctor: '::',
+											_0: 4,
+											_1: {
+												ctor: '::',
+												_0: 5,
+												_1: {
+													ctor: '::',
+													_0: 6,
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}),
+								{
+									previous: 2,
+									current: 3,
+									next: 4,
+									rest: {
+										ctor: '::',
+										_0: 5,
+										_1: {
+											ctor: '::',
+											_0: 6,
+											_1: {
+												ctor: '::',
+												_0: 1,
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								});
+						}),
+					_1: {ctor: '[]'}
+				}
+			}),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_elm_community$elm_test$Test$describe,
+				'#backwards',
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_community$elm_test$Test$test,
+						'Example: 1 -- `backwards { previous = 1, current = 2...`',
+						function (_p4) {
+							var _p5 = _p4;
+							return A2(
+								_elm_community$elm_test$Expect$equal,
+								_user$project$Carousel$backwards(
+									{
+										previous: 1,
+										current: 2,
+										next: 3,
+										rest: {ctor: '[]'}
+									}),
+								{
+									previous: 3,
+									current: 1,
+									next: 2,
+									rest: {ctor: '[]'}
+								});
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_community$elm_test$Test$test,
+							'Example: 2 -- `backwards { previous = 1, current = 2...`',
+							function (_p6) {
+								var _p7 = _p6;
+								return A2(
+									_elm_community$elm_test$Expect$equal,
+									_user$project$Carousel$backwards(
+										{
+											previous: 1,
+											current: 2,
+											next: 3,
+											rest: {
+												ctor: '::',
+												_0: 4,
+												_1: {
+													ctor: '::',
+													_0: 5,
+													_1: {
+														ctor: '::',
+														_0: 6,
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										}),
+									{
+										previous: 6,
+										current: 1,
+										next: 2,
+										rest: {
+											ctor: '::',
+											_0: 3,
+											_1: {
+												ctor: '::',
+												_0: 4,
+												_1: {
+													ctor: '::',
+													_0: 5,
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									});
+							}),
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_community$elm_test$Test$describe,
+					'#fromList',
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_community$elm_test$Test$test,
+							'Example: 1 -- `fromList \"Meera\" [] --> Err \"not found\"`',
+							function (_p8) {
+								var _p9 = _p8;
+								return A2(
+									_elm_community$elm_test$Expect$equal,
+									A2(
+										_user$project$Carousel$fromList,
+										'Meera',
+										{ctor: '[]'}),
+									_elm_lang$core$Result$Err('not found'));
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_community$elm_test$Test$test,
+								'Example: 2 -- `fromList \"Cersei\" [ \"Cersei\", \"Hodor\"...`',
+								function (_p10) {
+									var _p11 = _p10;
+									return A2(
+										_elm_community$elm_test$Expect$equal,
+										A2(
+											_user$project$Carousel$fromList,
+											'Cersei',
+											{
+												ctor: '::',
+												_0: 'Cersei',
+												_1: {
+													ctor: '::',
+													_0: 'Hodor',
+													_1: {ctor: '[]'}
+												}
+											}),
+										_elm_lang$core$Result$Err('list was too short'));
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_community$elm_test$Test$test,
+									'Example: 3 -- `fromList \"Meera\" [ \"Cersei\", \"Hodor\",...`',
+									function (_p12) {
+										var _p13 = _p12;
+										return A2(
+											_elm_community$elm_test$Expect$equal,
+											A2(
+												_user$project$Carousel$fromList,
+												'Meera',
+												{
+													ctor: '::',
+													_0: 'Cersei',
+													_1: {
+														ctor: '::',
+														_0: 'Hodor',
+														_1: {
+															ctor: '::',
+															_0: 'Joffrey',
+															_1: {
+																ctor: '::',
+																_0: 'Meera',
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												}),
+											_elm_lang$core$Result$Ok(
+												{
+													previous: 'Joffrey',
+													current: 'Meera',
+													next: 'Cersei',
+													rest: {
+														ctor: '::',
+														_0: 'Hodor',
+														_1: {ctor: '[]'}
+													}
+												}));
+									}),
+								_1: {ctor: '[]'}
+							}
+						}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}
+	});

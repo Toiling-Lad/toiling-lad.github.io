@@ -1,0 +1,50 @@
+var _user$project$Routing_Helpers$getProjectById = F2(
+	function (projectId, projects) {
+		var list = A2(
+			_elm_lang$core$List$filter,
+			function (b) {
+				return _elm_lang$core$Native_Utils.eq(b.id, projectId);
+			},
+			projects);
+		var getProject = function () {
+			var _p0 = _elm_lang$core$List$head(list);
+			if (_p0.ctor === 'Just') {
+				return _p0._0;
+			} else {
+				return {id: 'nothing', name: 'nothing', description: 'nothing', img: 'nothing', width: 0, intro: 'nothing', tag: 'nothing'};
+			}
+		}();
+		return getProject;
+	});
+var _user$project$Routing_Helpers$projectDecoder = A3(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+	'tag',
+	_elm_lang$core$Json_Decode$string,
+	A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'intro',
+		_elm_lang$core$Json_Decode$string,
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'width',
+			_elm_lang$core$Json_Decode$float,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'img',
+				_elm_lang$core$Json_Decode$string,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'description',
+					_elm_lang$core$Json_Decode$string,
+					A3(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+						'name',
+						_elm_lang$core$Json_Decode$string,
+						A3(
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+							'id',
+							_elm_lang$core$Json_Decode$string,
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Models$Project))))))));
+var _user$project$Routing_Helpers$projectsDecoder = _elm_lang$core$Json_Decode$list(_user$project$Routing_Helpers$projectDecoder);
+var _user$project$Routing_Helpers$fetchProjectsUrl = '/api/db.json';
+var _user$project$Routing_Helpers$fetchProjects = A3(_ohanhi$remotedata_http$RemoteData_Http$get, _user$project$Routing_Helpers$fetchProjectsUrl, _user$project$Msgs$OnFetchProjects, _user$project$Routing_Helpers$projectsDecoder);
