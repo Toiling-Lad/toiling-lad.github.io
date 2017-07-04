@@ -5,13 +5,21 @@ import RemoteData exposing (WebData)
 
 type alias Model =
     { projects : WebData (List Project)
+    , route : Route
     }
 
 
-initialModel : Model
-initialModel =
+initialModel : Route -> Model
+initialModel route =
     { projects = RemoteData.Loading
+    , route = route
     }
+
+
+type Route
+    = ProjectsRoute
+    | ProjectRoute ProjectId
+    | NotFoundRoute
 
 
 type alias ProjectId =
