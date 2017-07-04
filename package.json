@@ -1,22 +1,27 @@
 {
-  "scripts": {
-    "api": "node api.js",
-    "build": "webpack",
-    "client": "webpack-dev-server --port 3000",
-    "start": "nf start",
-    "deploy": "git push origin `git subtree split --prefix dist dev`:master"
-  },
-  "dependencies": {
-    "ace-css": "1.1",
-    "css-loader": "^0.28.4",
-    "elm-webpack-loader": "^4.3.1",
-    "file-loader": "^0.11.2",
-    "font-awesome": "4",
-    "foreman": "^2.0.0",
-    "serve": "^6.0.1",
-    "style-loader": "^0.18.2",
-    "url-loader": "^0.5.9",
-    "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.5.0"
-  }
+    "name": "toiling-lad.github.io",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/Toiling-Lad/toiling-lad.github.io",
+    "license": "MIT",
+    "scripts": {
+        "api": "node api.js",
+        "build": "webpack",
+        "client": "webpack-dev-server --port 3000",
+        "start": "nf start",
+        "deploy": "git push origin `git subtree split --prefix dist dev`:master"
+    },
+    "dependencies": {
+        "ace-css": "1.1",
+        "css-loader": "^0.28.4",
+        "elm-webpack-loader": "^4.3.1",
+        "file-loader": "^0.11.2",
+        "font-awesome": "4",
+        "foreman": "^2.0.0",
+        "json-server": "0.9.5",
+        "style-loader": "^0.18.2",
+        "url-loader": "^0.5.9",
+        "webpack": "^3.0.0",
+        "webpack-dev-server": "^2.5.0"
+    }
 }
