@@ -1,24 +1,20 @@
 module Pages.Home exposing (..)
 
 import Html exposing (..)
-import Html.Attributes exposing (class)
+import Html.Attributes exposing (class, href)
 import Msgs exposing (Msg)
 import Models exposing (Project)
 import RemoteData exposing (WebData)
+import Routing.Router exposing (projectPath)
+import Styles exposing (..)
 
 
 view : WebData (List Project) -> Html Msg
 view response =
-    div []
-        [ nav
+    div [ styles container ]
+        [ text "Container"
         , maybeList response
         ]
-
-
-nav : Html Msg
-nav =
-    div [ class "clearfix mb2 white bg-black" ]
-        [ div [ class "left p2" ] [ text "Projects" ] ]
 
 
 maybeList : WebData (List Project) -> Html Msg
@@ -40,17 +36,7 @@ maybeList response =
 list : List Project -> Html Msg
 list projects =
     div [ class "p2" ]
-        [ table []
-            [ thead []
-                [ tr []
-                    [ th [] [ text "Id" ]
-                    , th [] [ text "Name" ]
-                    , th [] [ text "Level" ]
-                    , th [] [ text "Actions" ]
-                    ]
-                ]
-            , tbody [] (List.map projectRow projects)
-            ]
+        [ div [] (List.map projectRow projects)
         ]
 
 
@@ -61,5 +47,18 @@ projectRow project =
         , td [] [ text project.name ]
         , td [] [ text (toString project.level) ]
         , td []
-            []
+            [ goToProjectBtn project ]
         ]
+
+
+goToProjectBtn : Project -> Html.Html Msg
+goToProjectBtn project =
+    let
+        path =
+            projectPath project.id
+    in
+        a
+            [ class "btn regular"
+            , href path
+            ]
+            [ text "Go to Project" ]

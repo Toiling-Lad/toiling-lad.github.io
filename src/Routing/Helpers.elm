@@ -1,4 +1,4 @@
-module Helpers exposing (..)
+module Routing.Helpers exposing (..)
 
 import Http
 import Json.Decode as Decode

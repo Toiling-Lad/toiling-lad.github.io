@@ -1,16 +1,17 @@
 module Main exposing (..)
 
-import Html exposing (Html, div, text, program)
 import Models exposing (Model, initialModel)
 import View exposing (view)
 import Msgs exposing (Msg)
 import Update exposing (update)
-import Helpers exposing (fetchProjects)
+import Routing.Helpers exposing (fetchProjects)
+import Navigation exposing (Location)
+import Routing.Router
 
 
 main : Program Never Model Msg
 main =
-    program
+    Navigation.program Msgs.OnLocationChange
         { init = init
         , view = view
         , update = update
@@ -18,9 +19,13 @@ main =
         }
 
 
-init : ( Model, Cmd Msg )
-init =
-    ( initialModel, fetchProjects )
+init : Location -> ( Model, Cmd Msg )
+init location =
+    let
+        currentRoute =
+            Routing.Router.parseLocation location
+    in
+        ( initialModel currentRoute, fetchProjects )
 
 
 subscriptions : Model -> Sub Msg
