@@ -1,7 +1,7 @@
 module Routing.Router exposing (..)
 
 import Navigation exposing (Location)
-import Models exposing (ProjectId, Route(..))
+import Models exposing (Route(..))
 import UrlParser exposing (..)
 
 
@@ -29,6 +29,6 @@ projectsPath =
     "#projects"
 
 
-projectPath : ProjectId -> String
+projectPath : String -> String
 projectPath id =
     "#projects/" ++ id
