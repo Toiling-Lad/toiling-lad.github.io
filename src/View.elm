@@ -1,7 +1,7 @@
 module View exposing (..)
 
 import Html exposing (Html, div, text)
-import Models exposing (Model, ProjectId)
+import Models exposing (Model)
 import Msgs exposing (Msg)
 import Pages.Project
 import Pages.Home
@@ -13,12 +13,24 @@ view : Model -> Html Msg
 view model =
     div [ styles wrapper ]
         [ div [ styles headerSection ]
-            [ text "Header" ]
+            [ nav ]
         , div [ styles bodySection ]
             [ page model ]
         , div [ styles footerSection ]
-            [ text "Footer" ]
+            [ footer ]
         ]
+
+
+nav : Html Msg
+nav =
+    div [ styles navContainer ]
+        []
+
+
+footer : Html Msg
+footer =
+    div []
+        []
 
 
 page : Model -> Html Msg
@@ -34,7 +46,7 @@ page model =
             notFoundView
 
 
-projectPage : Model -> ProjectId -> Html Msg
+projectPage : Model -> String -> Html Msg
 projectPage model projectId =
     case model.projects of
         RemoteData.NotAsked ->
@@ -55,8 +67,9 @@ projectPage model projectId =
                         Pages.Project.view project
 
                     Nothing ->
-                        notFoundView
+                        Pages.Home.view model.projects
 
+        -- notFoundView
         RemoteData.Failure err ->
             text (toString err)
 

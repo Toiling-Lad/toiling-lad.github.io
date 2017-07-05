@@ -4,7 +4,7 @@ import Http
 import Json.Decode as Decode
 import Json.Decode.Pipeline exposing (decode, required)
 import Msgs exposing (Msg)
-import Models exposing (ProjectId, Project)
+import Models exposing (Project)
 import RemoteData
 
 
@@ -30,4 +30,5 @@ projectDecoder =
     decode Project
         |> required "id" Decode.string
         |> required "name" Decode.string
-        |> required "level" Decode.int
+        |> required "description" Decode.string
+        |> required "width" Decode.float

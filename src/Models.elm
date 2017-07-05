@@ -18,18 +18,15 @@ initialModel route =
 
 type Route
     = ProjectsRoute
-    | ProjectRoute ProjectId
+    | ProjectRoute String
     | NotFoundRoute
 
 
-type alias ProjectId =
-    String
-
-
 type alias Project =
-    { id : ProjectId
+    { id : String
     , name : String
-    , level : Int
+    , description : String
+    , width : Float
     }
 
 
@@ -37,5 +34,6 @@ new : Project
 new =
     { id = "0"
     , name = ""
-    , level = 1
+    , description = ""
+    , width = 1
     }

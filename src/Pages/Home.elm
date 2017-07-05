@@ -11,10 +11,7 @@ import Styles exposing (..)
 
 view : WebData (List Project) -> Html Msg
 view response =
-    div [ styles container ]
-        [ text "Container"
-        , maybeList response
-        ]
+    maybeList response
 
 
 maybeList : WebData (List Project) -> Html Msg
@@ -35,30 +32,37 @@ maybeList response =
 
 list : List Project -> Html Msg
 list projects =
-    div [ class "p2" ]
-        [ div [] (List.map projectRow projects)
+    div []
+        [ div [ styles flexContainer ]
+            [ header ]
+        , div [ styles flexContainer ]
+            (List.map projectItem projects)
         ]
 
 
-projectRow : Project -> Html Msg
-projectRow project =
-    tr []
-        [ td [] [ text project.id ]
-        , td [] [ text project.name ]
-        , td [] [ text (toString project.level) ]
-        , td []
-            [ goToProjectBtn project ]
-        ]
-
-
-goToProjectBtn : Project -> Html.Html Msg
-goToProjectBtn project =
+projectItem : Project -> Html Msg
+projectItem project =
     let
         path =
             projectPath project.id
     in
         a
-            [ class "btn regular"
+            [ styles (flexItem project.width)
             , href path
             ]
-            [ text "Go to Project" ]
+            [ text project.name
+            ]
+
+
+header : Html Msg
+header =
+    a [ styles flexHeader, href "/" ]
+        [ h1 []
+            [ text "Open-source projects" ]
+        ]
+
+
+secondaryHeader : Project -> Html Msg
+secondaryHeader project =
+    h2 [ styles flexSecondaryHeader ]
+        [ text project.name ]

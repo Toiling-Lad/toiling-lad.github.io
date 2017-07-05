@@ -1,9 +1,12 @@
 module Pages.Project exposing (..)
 
 import Html exposing (..)
-import Html.Attributes exposing (class, value, href)
 import Msgs exposing (Msg)
 import Models exposing (Project)
+import Styles exposing (..)
+import Pages.Home exposing (header)
+import Html.Attributes exposing (class, value, href)
+import Routing.Router exposing (projectPath)
 
 
 view : Project -> Html Msg
@@ -15,33 +18,59 @@ view model =
 
 form : Project -> Html Msg
 form project =
-    div [ class "m3" ]
-        [ h1 [] [ text project.name ]
-        , formLevel project
-        ]
-
-
-formLevel : Project -> Html Msg
-formLevel project =
-    div
-        [ class "clearfix py1"
-        ]
-        [ div [ class "col col-5" ] [ text "Level" ]
-        , div [ class "col col-7" ]
-            [ span [ class "h2 bold" ] [ text (toString project.level) ]
-            , btnLevelDecrease project
-            , btnLevelIncrease project
+    div []
+        [ div [ styles flexContainer ]
+            [ Pages.Home.header ]
+        , div [ styles flexContainer ]
+            [ Pages.Home.secondaryHeader project ]
+        , div [ styles projectContainer ]
+            [ btnPrevious project
+            , projectItem project
+            , btnNext project
             ]
         ]
 
 
-btnLevelDecrease : Project -> Html Msg
-btnLevelDecrease project =
-    a [ class "btn ml1 h1" ]
-        [ i [ class "fa fa-minus-circle" ] [] ]
+projectItem : Project -> Html Msg
+projectItem project =
+    div
+        [ styles flexContainer ]
+        [ div [ styles projectImage ]
+            [ text "[IMG]"
+            ]
+        , div [ styles projectText ]
+            [ div []
+                [ h3 [ styles projectTitle ]
+                    [ text "Description" ]
+                ]
+            , div [ styles projectDescription ]
+                [ text project.description ]
+            , div [ styles projectDescription ]
+                [ text "-> TO GITHUB <-" ]
+            ]
+        ]
 
 
-btnLevelIncrease : Project -> Html Msg
-btnLevelIncrease project =
-    a [ class "btn ml1 h1" ]
-        [ i [ class "fa fa-plus-circle" ] [] ]
+stringToInt : String -> Int
+stringToInt str =
+    Result.withDefault 0 (String.toInt str)
+
+
+btnPrevious : Project -> Html Msg
+btnPrevious project =
+    let
+        path =
+            projectPath (toString ((stringToInt project.id) - 1))
+    in
+        a [ class "btn ml1 h1", href path ]
+            [ i [ class "fa fa-caret-left" ] [] ]
+
+
+btnNext : Project -> Html Msg
+btnNext project =
+    let
+        path =
+            projectPath (toString ((stringToInt project.id) + 1))
+    in
+        a [ class "btn ml1 h1", href path ]
+            [ i [ class "fa fa-caret-right" ] [] ]
