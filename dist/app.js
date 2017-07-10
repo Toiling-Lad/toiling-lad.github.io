@@ -16117,15 +16117,6 @@ var _user$project$Styles$defaultShadow = A4(
 var _user$project$Styles$colorNav = _rtfeldman$elm_css$Css$hex('313131');
 var _user$project$Styles$colorBlue = _rtfeldman$elm_css$Css$hex('4286f4');
 var _user$project$Styles$colorWhite = _rtfeldman$elm_css$Css$hex('ffffff');
-var _user$project$Styles$asd = {
-	ctor: '::',
-	_0: _rtfeldman$elm_css$Css$backgroundColor(_user$project$Styles$colorBlue),
-	_1: {
-		ctor: '::',
-		_0: _rtfeldman$elm_css$Css$color(_user$project$Styles$colorWhite),
-		_1: {ctor: '[]'}
-	}
-};
 var _user$project$Styles$colorTaco = _rtfeldman$elm_css$Css$hex('fff080');
 var _user$project$Styles$colorSalsa = _rtfeldman$elm_css$Css$hex('ff6347');
 var _user$project$Styles$colorText = _rtfeldman$elm_css$Css$hex('731c0d');
@@ -16476,8 +16467,17 @@ var _user$project$Styles$projectTitle = {
 		_0: _rtfeldman$elm_css$Css$textAlign(_rtfeldman$elm_css$Css$center),
 		_1: {
 			ctor: '::',
-			_0: _rtfeldman$elm_css$Css$hover(_user$project$Styles$asd),
-			_1: {ctor: '[]'}
+			_0: _rtfeldman$elm_css$Css$color(_user$project$Styles$colorBlue),
+			_1: {
+				ctor: '::',
+				_0: _rtfeldman$elm_css$Css$hover(
+					{
+						ctor: '::',
+						_0: _rtfeldman$elm_css$Css$color(_user$project$Styles$colorLightGrey),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
 		}
 	}
 };
