@@ -7,6 +7,8 @@ import Pages.Project
 import Pages.Home
 import RemoteData
 import Styles exposing (..)
+import Routing.Router exposing (..)
+import Debug
 
 
 view : Model -> Html Msg

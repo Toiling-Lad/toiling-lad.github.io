@@ -26,7 +26,7 @@ parseLocation location =
 
 projectsPath : String
 projectsPath =
-    "#projects"
+    "#"
 
 
 projectPath : String -> String

@@ -5,7 +5,7 @@ import Html.Attributes exposing (class, href)
 import Msgs exposing (Msg)
 import Models exposing (Project)
 import RemoteData exposing (WebData)
-import Routing.Router exposing (projectPath)
+import Routing.Router exposing (projectPath, projectsPath)
 import Styles exposing (..)
 
 
@@ -56,7 +56,7 @@ projectItem project =
 
 header : Html Msg
 header =
-    a [ styles flexHeader, href "/" ]
+    a [ styles flexHeader, href projectsPath ]
         [ h1 []
             [ text "Open-source projects" ]
         ]
