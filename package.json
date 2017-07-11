@@ -9,7 +9,8 @@
         "build": "webpack",
         "client": "webpack-dev-server --port 3000",
         "start": "nf start",
-        "deploy": "git push origin `git subtree split --prefix dist dev`:master"
+        "deploy": "git push origin `git subtree split --prefix dist dev`:master",
+        "test": "elm-verify-examples && elm-test"
     },
     "dependencies": {
         "ace-css": "1.1",
