@@ -1,0 +1,122 @@
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+#HeaderSection {
+    position: fixed;
+    top: 0rem;
+    width: 100%;
+    height: 4rem;
+    background-color: #313131;
+    overflow: hidden;
+    z-index: 2;
+}
+
+#BodySection {
+    padding-top: 4rem;
+    background-color: #ffffff;
+    padding-bottom: 15rem;
+    max-width: 70rem;
+    margin: auto;
+    z-index: 1;
+}
+
+#FooterSection {
+    position: absolute;
+    bottom: 0rem;
+    width: 100%;
+    height: 15rem;
+    background-color: #e7e7e7;
+    z-index: 0;
+}
+
+#NavContainer {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: #ffffff;
+    height: 100%;
+}
+
+#FlexContainer {
+    padding: 0rem;
+    margin: 0rem;
+    width: 100%;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#FlexHeader {
+    margin: 0.5rem;
+    flex-grow: 1;
+    text-align: center;
+    height: 8rem;
+    text-decoration: none;
+}
+
+#FlexSecondaryHeader {
+    margin: 0.5rem;
+    flex-grow: 1;
+    text-align: center;
+    height: 4rem;
+    text-decoration: none;
+}
+
+#FlexItem {
+    margin: 0.5rem;
+    border: 0.001rem solid #e7e7e7;
+    color: transparent;
+    flex-grow: 1;
+    height: 17rem;
+    opacity: 1;
+    min-width: 20rem;
+    text-align: center;
+}
+
+#FlexItem:hover {
+    background-color: #e7e7e7;
+    opacity: 0.5;
+    color: #313131;
+}
+
+#ProjectContainer {
+    padding: 0rem;
+    margin: 0rem;
+    width: 100%;
+    list-style: none;
+    flex-grow: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ProjectImage {
+    margin: 0.5rem;
+    border: 0.001rem solid #e7e7e7;
+    flex-grow: 1;
+    height: 40rem;
+    width: 35rem;
+    text-align: center;
+}
+
+#ProjectText {
+    margin: 0.5rem;
+    border: 0.001rem solid #e7e7e7;
+    flex-grow: 1;
+    height: 40rem;
+    width: 25rem;
+}
+
+#ProjectTitle {
+    margin: 0.5rem;
+    text-align: center;
+    color: #4286f4;
+}
+
+#ProjectDescription {
+    margin: 0.5rem;
+    text-align: left;
+}

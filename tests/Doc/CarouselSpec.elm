@@ -56,23 +56,23 @@ spec =
             ]
         , Test.describe "#fromList" <|
             [
-            Test.test "Example: 1 -- `fromList \"Meera\" [] --> Nothing`" <|
+            Test.test "Example: 1 -- `fromList \"Meera\" [] --> Err \"not found\"`" <|
                 \() ->
                     Expect.equal
                         (
                             fromList "Meera" []
                         )
                         (
-                            Nothing
+                            Err "not found"
                         )
-            , Test.test "Example: 2 -- `fromList \"Meera\" [ \"Cersei\", \"Hodor\",...`" <|
+            , Test.test "Example: 2 -- `fromList \"Cersei\" [ \"Cersei\", \"Hodor\"...`" <|
                 \() ->
                     Expect.equal
                         (
-                            fromList "Meera" [ "Cersei", "Hodor", "Joffrey"]
+                            fromList "Cersei" [ "Cersei", "Hodor"]
                         )
                         (
-                            Nothing
+                            Err "list was too short"
                         )
             , Test.test "Example: 3 -- `fromList \"Meera\" [ \"Cersei\", \"Hodor\",...`" <|
                 \() ->
@@ -81,7 +81,7 @@ spec =
                             fromList "Meera" [ "Cersei", "Hodor", "Joffrey", "Meera" ]
                         )
                         (
-                            Just { previous = "Joffrey", current = "Meera", next = "Cersei", rest = ["Hodor"] }
+                            Ok { previous = "Joffrey", current = "Meera", next = "Cersei", rest = ["Hodor"] }
                         )
             ]
     ]

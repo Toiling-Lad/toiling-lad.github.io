@@ -1,29 +1,33 @@
 module View exposing (..)
 
-import Html exposing (Html, div, text)
+import Html exposing (..)
 import Models exposing (Model)
 import Msgs exposing (Msg)
 import Pages.Project
 import Pages.Home
 import RemoteData
-import Styles exposing (..)
+import Styles.SharedStyles exposing (..)
+
+
+{ id } =
+    styleNamespace
 
 
 view : Model -> Html Msg
 view model =
-    div [ styles wrapper ]
-        [ div [ styles headerSection ]
+    div []
+        [ div [ id HeaderSection ]
             [ nav ]
-        , div [ styles bodySection ]
+        , div [ id BodySection ]
             [ page model ]
-        , div [ styles footerSection ]
+        , div [ id FooterSection ]
             [ footer ]
         ]
 
 
 nav : Html Msg
 nav =
-    div [ styles navContainer ]
+    div [ id NavContainer ]
         []
 
 
