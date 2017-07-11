@@ -69,13 +69,13 @@ backwards { previous, current, next, rest } =
 
 {-|
     fromList "Meera" []
-    --> Nothing
+    --> Err "not found"
 
-    fromList "Meera" [ "Cersei", "Hodor", "Joffrey"]
-    --> Nothing
+    fromList "Cersei" [ "Cersei", "Hodor"]
+    --> Err "list was too short"
 
     fromList "Meera" [ "Cersei", "Hodor", "Joffrey", "Meera" ]
-    --> Just { previous = "Joffrey", current = "Meera", next = "Cersei", rest = ["Hodor"] }
+    --> Ok { previous = "Joffrey", current = "Meera", next = "Cersei", rest = ["Hodor"] }
 
 -}
 fromList : a -> List a -> Result String (Carousel a)

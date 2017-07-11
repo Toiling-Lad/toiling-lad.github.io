@@ -3,12 +3,16 @@ module Pages.Project exposing (..)
 import Html exposing (..)
 import Msgs exposing (Msg)
 import Models exposing (Project, initialModel)
-import Styles exposing (..)
 import Pages.Home exposing (header)
 import Html.Attributes exposing (class, value, href)
 import Routing.Router exposing (projectPath)
 import RemoteData exposing (WebData)
 import Carousel exposing (Carousel, fromList)
+import Styles.SharedStyles exposing (..)
+
+
+{ id } =
+    styleNamespace
 
 
 view : Project -> WebData (List Project) -> Html Msg
@@ -58,16 +62,16 @@ form project projects =
                         [ text message ]
 
                 Ok carousel ->
-                    div [ styles projectContainer ]
+                    div [ id ProjectContainer ]
                         [ btnPrevious carousel.previous
                         , projectItem project
                         , btnNext carousel.next
                         ]
     in
         div []
-            [ div [ styles flexContainer ]
+            [ div [ id FlexContainer ]
                 [ Pages.Home.header ]
-            , div [ styles flexContainer ]
+            , div [ id FlexContainer ]
                 [ Pages.Home.secondaryHeader project ]
             , carouselView
             ]
@@ -76,18 +80,18 @@ form project projects =
 projectItem : Project -> Html Msg
 projectItem project =
     div
-        [ styles flexContainer ]
-        [ div [ styles projectImage ]
+        [ id FlexContainer ]
+        [ div [ id ProjectImage ]
             [ text "[IMG]"
             ]
-        , div [ styles projectText ]
+        , div [ id ProjectText ]
             [ div []
-                [ h3 [ styles projectTitle ]
+                [ h3 [ id ProjectTitle ]
                     [ text "Description" ]
                 ]
-            , div [ styles projectDescription ]
+            , div [ id ProjectDescription ]
                 [ text project.description ]
-            , div [ styles projectDescription ]
+            , div [ id ProjectDescription ]
                 [ text "-> TO GITHUB <-" ]
             ]
         ]
