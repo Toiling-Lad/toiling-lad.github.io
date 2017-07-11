@@ -7,8 +7,6 @@ import Pages.Project
 import Pages.Home
 import RemoteData
 import Styles exposing (..)
-import Routing.Router exposing (..)
-import Debug
 
 
 view : Model -> Html Msg
@@ -66,12 +64,11 @@ projectPage model projectId =
             in
                 case maybeProject of
                     Just project ->
-                        Pages.Project.view project
+                        Pages.Project.view project model.projects
 
                     Nothing ->
                         Pages.Home.view model.projects
 
-        -- notFoundView
         RemoteData.Failure err ->
             text (toString err)
 
