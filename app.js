@@ -16068,6 +16068,118 @@ var _rtfeldman$elm_css$Css$thin = _rtfeldman$elm_css$Css$IntentionallyUnsupporte
 var _rtfeldman$elm_css$Css$thick = _rtfeldman$elm_css$Css$IntentionallyUnsupportedPleaseSeeDocs;
 var _rtfeldman$elm_css$Css$blink = _rtfeldman$elm_css$Css$IntentionallyUnsupportedPleaseSeeDocs;
 
+var _user$project$Carousel$fromList = F2(
+	function (needle, list) {
+		var recurse = F3(
+			function (remainingRounds, needle, list) {
+				recurse:
+				while (true) {
+					if (_elm_lang$core$Native_Utils.cmp(remainingRounds, 0) < 1) {
+						return _elm_lang$core$Result$Err('not found');
+					} else {
+						var _p0 = list;
+						if (_p0.ctor === '[]') {
+							return _elm_lang$core$Result$Err('list was too short');
+						} else {
+							if (_p0._1.ctor === '[]') {
+								return _elm_lang$core$Result$Err('list was too short');
+							} else {
+								if (_p0._1._1.ctor === '[]') {
+									return _elm_lang$core$Result$Err('list was too short');
+								} else {
+									var _p4 = _p0._1._1._1;
+									var _p3 = _p0._0;
+									var _p2 = _p0._1._1._0;
+									var _p1 = _p0._1._0;
+									if (_elm_lang$core$Native_Utils.eq(_p1, needle)) {
+										return _elm_lang$core$Result$Ok(
+											{previous: _p3, current: _p1, next: _p2, rest: _p4});
+									} else {
+										var _v1 = remainingRounds - 1,
+											_v2 = needle,
+											_v3 = {
+											ctor: '::',
+											_0: _p1,
+											_1: {
+												ctor: '::',
+												_0: _p2,
+												_1: A2(
+													_elm_lang$core$Basics_ops['++'],
+													_p4,
+													{
+														ctor: '::',
+														_0: _p3,
+														_1: {ctor: '[]'}
+													})
+											}
+										};
+										remainingRounds = _v1;
+										needle = _v2;
+										list = _v3;
+										continue recurse;
+									}
+								}
+							}
+						}
+					}
+				}
+			});
+		var length = _elm_lang$core$List$length(list);
+		return A3(recurse, length, needle, list);
+	});
+var _user$project$Carousel$backwards = function (_p5) {
+	var _p6 = _p5;
+	var _p9 = _p6.rest;
+	var _p8 = _p6.next;
+	var newRest = function () {
+		var _p7 = _elm_lang$core$List$reverse(_p9);
+		if (_p7.ctor === '[]') {
+			return {ctor: '[]'};
+		} else {
+			return {
+				ctor: '::',
+				_0: _p8,
+				_1: _elm_lang$core$List$reverse(_p7._1)
+			};
+		}
+	}();
+	var newPrevious = A2(
+		_elm_lang$core$Maybe$withDefault,
+		_p8,
+		_elm_lang$core$List$head(
+			_elm_lang$core$List$reverse(_p9)));
+	return {previous: newPrevious, current: _p6.previous, next: _p6.current, rest: newRest};
+};
+var _user$project$Carousel$onwards = function (_p10) {
+	var _p11 = _p10;
+	var _p14 = _p11.rest;
+	var _p13 = _p11.previous;
+	var newRest = function () {
+		var _p12 = _p14;
+		if (_p12.ctor === '[]') {
+			return {ctor: '[]'};
+		} else {
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				_p12._1,
+				{
+					ctor: '::',
+					_0: _p13,
+					_1: {ctor: '[]'}
+				});
+		}
+	}();
+	var newNext = A2(
+		_elm_lang$core$Maybe$withDefault,
+		_p13,
+		_elm_lang$core$List$head(_p14));
+	return {previous: _p11.current, current: _p11.next, next: newNext, rest: newRest};
+};
+var _user$project$Carousel$Carousel = F4(
+	function (a, b, c, d) {
+		return {previous: a, current: b, next: c, rest: d};
+	});
+
 var _user$project$Models$new = {id: '0', name: '', description: '', width: 1};
 var _user$project$Models$initialModel = function (route) {
 	return {projects: _krisajenkins$remotedata$RemoteData$Loading, route: route};
@@ -16495,7 +16607,7 @@ var _user$project$Styles$projectDescription = {
 var _user$project$Routing_Router$projectPath = function (id) {
 	return A2(_elm_lang$core$Basics_ops['++'], '#projects/', id);
 };
-var _user$project$Routing_Router$projectsPath = '#projects';
+var _user$project$Routing_Router$projectsPath = '#';
 var _user$project$Routing_Router$matchers = _evancz$url_parser$UrlParser$oneOf(
 	{
 		ctor: '::',
@@ -16549,7 +16661,7 @@ var _user$project$Pages_Home$header = A2(
 		_0: _user$project$Styles$styles(_user$project$Styles$flexHeader),
 		_1: {
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$href('/'),
+			_0: _elm_lang$html$Html_Attributes$href(_user$project$Routing_Router$projectsPath),
 			_1: {ctor: '[]'}
 		}
 	},
@@ -16635,44 +16747,8 @@ var _user$project$Pages_Home$view = function (response) {
 	return _user$project$Pages_Home$maybeList(response);
 };
 
-var _user$project$Pages_Project$stringToInt = function (str) {
-	return A2(
-		_elm_lang$core$Result$withDefault,
-		0,
-		_elm_lang$core$String$toInt(str));
-};
-var _user$project$Pages_Project$btnPrevious = function (project) {
-	var path = _user$project$Routing_Router$projectPath(
-		_elm_lang$core$Basics$toString(
-			_user$project$Pages_Project$stringToInt(project.id) - 1));
-	return A2(
-		_elm_lang$html$Html$a,
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('btn ml1 h1'),
-			_1: {
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$href(path),
-				_1: {ctor: '[]'}
-			}
-		},
-		{
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$i,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('fa fa-caret-left'),
-					_1: {ctor: '[]'}
-				},
-				{ctor: '[]'}),
-			_1: {ctor: '[]'}
-		});
-};
 var _user$project$Pages_Project$btnNext = function (project) {
-	var path = _user$project$Routing_Router$projectPath(
-		_elm_lang$core$Basics$toString(
-			_user$project$Pages_Project$stringToInt(project.id) + 1));
+	var path = _user$project$Routing_Router$projectPath(project);
 	return A2(
 		_elm_lang$html$Html$a,
 		{
@@ -16691,6 +16767,32 @@ var _user$project$Pages_Project$btnNext = function (project) {
 				{
 					ctor: '::',
 					_0: _elm_lang$html$Html_Attributes$class('fa fa-caret-right'),
+					_1: {ctor: '[]'}
+				},
+				{ctor: '[]'}),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$Pages_Project$btnPrevious = function (project) {
+	var path = _user$project$Routing_Router$projectPath(project);
+	return A2(
+		_elm_lang$html$Html$a,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('btn ml1 h1'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$href(path),
+				_1: {ctor: '[]'}
+			}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$i,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('fa fa-caret-left'),
 					_1: {ctor: '[]'}
 				},
 				{ctor: '[]'}),
@@ -16785,25 +16887,53 @@ var _user$project$Pages_Project$projectItem = function (project) {
 			}
 		});
 };
-var _user$project$Pages_Project$form = function (project) {
-	return A2(
-		_elm_lang$html$Html$div,
-		{ctor: '[]'},
-		{
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _user$project$Styles$styles(_user$project$Styles$flexContainer),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: _user$project$Pages_Home$header,
-					_1: {ctor: '[]'}
-				}),
-			_1: {
+var _user$project$Pages_Project$form = F2(
+	function (project, projects) {
+		var carouselList = A2(
+			_elm_lang$core$List$map,
+			function (a) {
+				return a.id;
+			},
+			projects);
+		var carouselView = function () {
+			var _p0 = A2(_user$project$Carousel$fromList, project.id, carouselList);
+			if (_p0.ctor === 'Err') {
+				return A2(
+					_elm_lang$html$Html$div,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(_p0._0),
+						_1: {ctor: '[]'}
+					});
+			} else {
+				var _p1 = _p0._0;
+				return A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _user$project$Styles$styles(_user$project$Styles$projectContainer),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _user$project$Pages_Project$btnPrevious(_p1.previous),
+						_1: {
+							ctor: '::',
+							_0: _user$project$Pages_Project$projectItem(project),
+							_1: {
+								ctor: '::',
+								_0: _user$project$Pages_Project$btnNext(_p1.next),
+								_1: {ctor: '[]'}
+							}
+						}
+					});
+			}
+		}();
+		return A2(
+			_elm_lang$html$Html$div,
+			{ctor: '[]'},
+			{
 				ctor: '::',
 				_0: A2(
 					_elm_lang$html$Html$div,
@@ -16814,7 +16944,7 @@ var _user$project$Pages_Project$form = function (project) {
 					},
 					{
 						ctor: '::',
-						_0: _user$project$Pages_Home$secondaryHeader(project),
+						_0: _user$project$Pages_Home$header,
 						_1: {ctor: '[]'}
 					}),
 				_1: {
@@ -16823,37 +16953,63 @@ var _user$project$Pages_Project$form = function (project) {
 						_elm_lang$html$Html$div,
 						{
 							ctor: '::',
-							_0: _user$project$Styles$styles(_user$project$Styles$projectContainer),
+							_0: _user$project$Styles$styles(_user$project$Styles$flexContainer),
 							_1: {ctor: '[]'}
 						},
 						{
 							ctor: '::',
-							_0: _user$project$Pages_Project$btnPrevious(project),
-							_1: {
-								ctor: '::',
-								_0: _user$project$Pages_Project$projectItem(project),
-								_1: {
-									ctor: '::',
-									_0: _user$project$Pages_Project$btnNext(project),
-									_1: {ctor: '[]'}
-								}
-							}
+							_0: _user$project$Pages_Home$secondaryHeader(project),
+							_1: {ctor: '[]'}
 						}),
-					_1: {ctor: '[]'}
+					_1: {
+						ctor: '::',
+						_0: carouselView,
+						_1: {ctor: '[]'}
+					}
 				}
-			}
-		});
-};
-var _user$project$Pages_Project$view = function (model) {
+			});
+	});
+var _user$project$Pages_Project$testItem = function (testValue) {
+	var path = _user$project$Routing_Router$projectPath(testValue);
 	return A2(
-		_elm_lang$html$Html$div,
-		{ctor: '[]'},
+		_elm_lang$html$Html$a,
 		{
 			ctor: '::',
-			_0: _user$project$Pages_Project$form(model),
+			_0: _elm_lang$html$Html_Attributes$href(path),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(testValue),
 			_1: {ctor: '[]'}
 		});
 };
+var _user$project$Pages_Project$maybeList = F2(
+	function (project, response) {
+		var _p2 = response;
+		switch (_p2.ctor) {
+			case 'NotAsked':
+				return _elm_lang$html$Html$text('');
+			case 'Loading':
+				return _elm_lang$html$Html$text('Loading...');
+			case 'Success':
+				return A2(_user$project$Pages_Project$form, project, _p2._0);
+			default:
+				return _elm_lang$html$Html$text(
+					_elm_lang$core$Basics$toString(_p2._0));
+		}
+	});
+var _user$project$Pages_Project$view = F2(
+	function (project, projects) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: A2(_user$project$Pages_Project$maybeList, project, projects),
+				_1: {ctor: '[]'}
+			});
+	});
 
 var _user$project$View$notFoundView = A2(
 	_elm_lang$html$Html$div,
@@ -16881,7 +17037,7 @@ var _user$project$View$projectPage = F2(
 						_p0._0));
 				var _p1 = maybeProject;
 				if (_p1.ctor === 'Just') {
-					return _user$project$Pages_Project$view(_p1._0);
+					return A2(_user$project$Pages_Project$view, _p1._0, model.projects);
 				} else {
 					return _user$project$Pages_Home$view(model.projects);
 				}
