@@ -17166,7 +17166,7 @@ var _user$project$Routing_Helpers$projectDecoder = A3(
 				_elm_lang$core$Json_Decode$string,
 				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Models$Project)))));
 var _user$project$Routing_Helpers$projectsDecoder = _elm_lang$core$Json_Decode$list(_user$project$Routing_Helpers$projectDecoder);
-var _user$project$Routing_Helpers$fetchProjectsUrl = 'http://localhost:4000/projects';
+var _user$project$Routing_Helpers$fetchProjectsUrl = './db.json';
 var _user$project$Routing_Helpers$fetchProjects = A2(
 	_elm_lang$core$Platform_Cmd$map,
 	_user$project$Msgs$OnFetchProjects,
