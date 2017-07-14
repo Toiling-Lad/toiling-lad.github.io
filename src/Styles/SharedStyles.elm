@@ -17,6 +17,13 @@ type CssIds
     | ProjectText
     | ProjectTitle
     | ProjectDescription
+    | ProjectDescriptionTitle
+    | TextCenter
+    | Image
+    | Overlay
+    | NavTitle
+    | PreviousProjectImage
+    | NextProjectImage
 
 
 styleNamespace : Html.CssHelpers.Namespace String class id msg

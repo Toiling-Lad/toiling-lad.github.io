@@ -1,9 +1,11 @@
 module View exposing (..)
 
 import Html exposing (..)
+import Html.Attributes exposing (..)
 import Models exposing (Model)
 import Msgs exposing (Msg)
 import Pages.Project
+import Routing.Router exposing (projectPath, projectsPath)
 import Pages.Home
 import RemoteData
 import Styles.SharedStyles exposing (..)
@@ -28,7 +30,9 @@ view model =
 nav : Html Msg
 nav =
     div [ id NavContainer ]
-        []
+        [ a [ id NavTitle, href projectsPath ]
+            [ text "Open-source projects" ]
+        ]
 
 
 footer : Html Msg

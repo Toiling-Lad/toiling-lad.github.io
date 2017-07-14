@@ -31,4 +31,27 @@ projectDecoder =
         |> required "id" Decode.string
         |> required "name" Decode.string
         |> required "description" Decode.string
+        |> required "img" Decode.string
         |> required "width" Decode.float
+
+
+{-|
+    getProjectById "1" [{id = "1", name = "project A", description = "Lorem..", img = "asdads", width = 1 }, {id = "2", name = "project B", description = "Lorem..", img = "asdads", width = 2 }]
+    --> {id = "1", name = "project A", description = "Lorem..", img = "asdads", width = 1 }
+
+-}
+getProjectById : String -> List Project -> Project
+getProjectById projectId projects =
+    let
+        list =
+            (List.filter (\b -> (b.id == projectId)) projects)
+
+        getProject =
+            case List.head list of
+                Just project ->
+                    project
+
+                Nothing ->
+                    { id = "nothing", name = "nothing", description = "nothing", img = "nothing", width = 0 }
+    in
+        getProject

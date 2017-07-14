@@ -1,7 +1,7 @@
 module Pages.Home exposing (..)
 
 import Html exposing (..)
-import Html.Attributes exposing (href)
+import Html.Attributes exposing (..)
 import Msgs exposing (Msg)
 import Models exposing (Project)
 import RemoteData exposing (WebData)
@@ -38,8 +38,6 @@ list : List Project -> Html Msg
 list projects =
     div []
         [ div [ id FlexContainer ]
-            [ header ]
-        , div [ id FlexContainer ]
             (List.map projectItem projects)
         ]
 
@@ -47,24 +45,40 @@ list projects =
 projectItem : Project -> Html Msg
 projectItem project =
     let
+        widthValue =
+            case project.width of
+                1 ->
+                    "10rem"
+
+                2 ->
+                    "20rem"
+
+                3 ->
+                    "30rem"
+
+                4 ->
+                    "40rem"
+
+                _ ->
+                    "20rem"
+
         path =
             projectPath project.id
     in
-        a [ id FlexItem, href path ]
-            [ div []
-                [ text project.name ]
+        div
+            [ id FlexItem
+            , style [ ( "background-image", "url(./img/" ++ project.img ++ ")" ), ( "width", widthValue ) ]
             ]
-
-
-header : Html Msg
-header =
-    a [ id FlexHeader, href projectsPath ]
-        [ h1 []
-            [ text "Open-source projects" ]
-        ]
-
-
-secondaryHeader : Project -> Html Msg
-secondaryHeader project =
-    h2 [ id FlexSecondaryHeader ]
-        [ text project.name ]
+            [ a
+                [ id Overlay
+                , href path
+                , style
+                    [ ( "transition", ".5s ease" )
+                    , ( "text-decoration", "none" )
+                    ]
+                ]
+                [ div
+                    [ id TextCenter ]
+                    [ text project.name ]
+                ]
+            ]

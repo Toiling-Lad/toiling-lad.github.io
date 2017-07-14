@@ -9,6 +9,7 @@
         "build": "webpack",
         "client": "webpack-dev-server --port 3000",
         "start": "nf start",
+        "styles": "elm-css src/Styles/Stylesheets.elm",
         "deploy": "git push origin `git subtree split --prefix dist dev`:master",
         "test": "elm-verify-examples && elm-test"
     },

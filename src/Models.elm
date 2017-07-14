@@ -26,6 +26,7 @@ type alias Project =
     { id : String
     , name : String
     , description : String
+    , img : String
     , width : Float
     }
 
@@ -35,5 +36,6 @@ new =
     { id = "0"
     , name = ""
     , description = ""
+    , img = ""
     , width = 1
     }
