@@ -20,6 +20,13 @@ type CssIds
     | ProjectText
     | ProjectTitle
     | ProjectDescription
+    | ProjectDescriptionTitle
+    | NextProjectImage
+    | PreviousProjectImage
+    | TextCenter
+    | Image
+    | Overlay
+    | NavTitle
 
 
 css : Stylesheet
@@ -33,17 +40,16 @@ css =
             [ position fixed
             , top (rem 0)
             , width (pct 100)
-            , height headerHeight
-            , backgroundColor colorNav
+            , height headerHeightMedium
             , overflow hidden
             , zIndex 2
               -- , boxShadow5 (rem 0) (rem 0.5) (rem 0.5) (rem 0.01) colorLightGrey
             ]
         , id BodySection
-            [ paddingTop headerHeight
+            [ paddingTop headerHeightMedium
             , backgroundColor colorWhite
             , paddingBottom footerHeight
-            , maxWidth (rem 70)
+              -- , maxWidth (rem 100)
             , margin auto
             , zIndex 1
             ]
@@ -52,14 +58,16 @@ css =
             , bottom (rem 0)
             , width (pct 100)
             , height footerHeight
-            , backgroundColor colorLightGrey
+            , backgroundColor colorNav
             , zIndex 0
             ]
         , id NavContainer
             [ paddingLeft (rem 0.5)
             , paddingRight (rem 0.5)
-            , color colorWhite
             , height (pct 100)
+            , textAlign center
+            , backgroundColor colorWhite
+            , borderBottom3 (px 1) solid colorGrey
             ]
         , id FlexContainer
             [ padding (rem 0)
@@ -86,19 +94,15 @@ css =
             , textDecoration none
             ]
         , id FlexItem
-            [ margin (rem 0.5)
-            , border3 (rem 0.001) solid colorLightGrey
-            , color transparent
+            [ margin (rem 0.75)
+            , position relative
+            , backgroundSize cover
+            , backgroundPosition center
             , flexGrow (num 1)
-            , height (rem 17)
-            , opacity (num 1)
-            , minWidth (rem 20)
+            , height (rem 12.5)
+            , minWidth (rem 30)
+            , border3 (px 1) solid colorGrey
             , textAlign center
-            , hover
-                [ backgroundColor colorLightGrey
-                , opacity (num 0.5)
-                , color colorNav
-                ]
             ]
         , id ProjectContainer
             [ padding (rem 0)
@@ -107,32 +111,142 @@ css =
             , listStyle none
             , flexGrow (num 1)
             , display inlineFlex
-            , alignItems center
             , justifyContent center
             ]
         , id ProjectImage
             [ margin (rem 0.5)
-            , border3 (rem 0.001) solid colorLightGrey
+            , position relative
+            , backgroundSize cover
+            , backgroundPosition center
             , flexGrow (num 1)
-            , height (rem 40)
-            , width (rem 35)
-            , textAlign center
+            , height (rem 12.5)
+            , minWidth (rem 20)
+            , border3 (px 1) solid colorGrey
+            ]
+        , id PreviousProjectImage
+            [ backgroundSize cover
+            , backgroundPosition center
+            , flexGrow (num 1)
+            , marginTop (rem 2)
+            , height (rem 9)
+            , right (rem 1.5)
+            , minWidth (rem 5)
+            , border3 (px 1) solid colorGrey
+            ]
+        , id NextProjectImage
+            [ backgroundSize cover
+            , backgroundPosition center
+            , flexGrow (num 1)
+            , marginTop (rem 2)
+            , height (rem 9)
+            , left (rem 1.5)
+            , minWidth (rem 5)
+            , border3 (px 1) solid colorGrey
             ]
         , id ProjectText
             [ margin (rem 0.5)
-            , border3 (rem 0.001) solid colorLightGrey
             , flexGrow (num 1)
-            , height (rem 40)
-            , width (rem 25)
+            , height (rem 25)
+            , width (rem 20)
             ]
         , id ProjectTitle
             [ margin (rem 0.5)
+            , paddingTop (rem 2.5)
+            , paddingBottom (rem 2.5)
+            , fontSize (rem 1.5)
+            , color colorBlack
             , textAlign center
-            , color colorBlue
+            ]
+        , id ProjectDescriptionTitle
+            [ margin (rem 0.5)
+            , textAlign left
+            , fontSize (rem 0.75)
+            , paddingBottom (rem 1)
+            , borderBottom3 (px 1) solid colorGrey
             ]
         , id ProjectDescription
             [ margin (rem 0.5)
             , textAlign left
+            , fontSize (rem 0.5)
+            , paddingBottom (rem 1)
+            , borderBottom3 (px 1) solid colorGrey
+            ]
+        , id TextCenter
+            [ position relative
+            , textAlign center
+            , color colorBlack
+            , top (pct 50)
+            , textDecoration none
+            , fontSize (rem 1)
+            ]
+        , id Image
+            [ display block
+            , alignSelf center
+            , width (pct 100)
+            , height (pct 100)
+            , overflow visible
+            ]
+        , id Overlay
+            [ position absolute
+            , top (rem 0)
+            , bottom (rem 0)
+            , left (rem 0)
+            , right (rem 0)
+            , height (pct 100)
+            , width (pct 100)
+            , opacity (num 0)
+            , backgroundColor colorTransparent
+            , hover
+                [ opacity (num 1)
+                ]
+            ]
+        , id NavTitle
+            [ position relative
+            , textAlign center
+            , color colorBlack
+            , top (pct 25)
+            , textDecoration none
+            , paddingTop (rem 1)
+            , paddingBottom (rem 1)
+            , fontSize (rem 1)
+            ]
+        , mediaQuery "screen and ( min-width: 741px )"
+            [ id NavTitle
+                [ fontSize (rem 2)
+                ]
+            , id HeaderSection
+                [ height headerHeightLarge ]
+            , id BodySection
+                [ paddingTop headerHeightLarge ]
+            , id FlexItem
+                [ margin (rem 1.5)
+                , height (rem 25)
+                ]
+            , id TextCenter
+                [ fontSize (rem 2) ]
+            , id ProjectImage
+                [ height (rem 25) ]
+            , id PreviousProjectImage
+                [ height (rem 18)
+                , minWidth (rem 10)
+                , marginTop (rem 4)
+                , right (rem 3)
+                ]
+            , id NextProjectImage
+                [ height (rem 18)
+                , minWidth (rem 10)
+                , marginTop (rem 4)
+                , left (rem 3)
+                ]
+            , id ProjectTitle
+                [ fontSize (rem 3)
+                , paddingTop (rem 5)
+                , paddingBottom (rem 5)
+                ]
+            , id ProjectDescription
+                [ fontSize (rem 1) ]
+            , id ProjectDescriptionTitle
+                [ fontSize (rem 1.5) ]
             ]
         ]
 
@@ -176,14 +290,29 @@ colorLightGrey =
     hex "e7e7e7"
 
 
+colorGrey : Color
+colorGrey =
+    hex "e6eaea;"
+
+
+colorTransparent : Color
+colorTransparent =
+    rgba 49 49 49 0.25
+
+
 colorBlue : Color
 colorBlue =
     hex "4286f4"
 
 
-headerHeight : Rem
-headerHeight =
-    (rem 4)
+headerHeightLarge : Rem
+headerHeightLarge =
+    (rem 6)
+
+
+headerHeightMedium : Rem
+headerHeightMedium =
+    (rem 3)
 
 
 footerHeight : Rem

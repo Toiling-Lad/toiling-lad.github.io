@@ -3,9 +3,9 @@ module Pages.Project exposing (..)
 import Html exposing (..)
 import Msgs exposing (Msg)
 import Models exposing (Project, initialModel)
-import Pages.Home exposing (header)
-import Html.Attributes exposing (class, value, href)
+import Html.Attributes exposing (..)
 import Routing.Router exposing (projectPath)
+import Routing.Helpers exposing (getProjectById)
 import RemoteData exposing (WebData)
 import Carousel exposing (Carousel, fromList)
 import Styles.SharedStyles exposing (..)
@@ -17,9 +17,7 @@ import Styles.SharedStyles exposing (..)
 
 view : Project -> WebData (List Project) -> Html Msg
 view project projects =
-    div []
-        [ maybeList project projects
-        ]
+    maybeList project projects
 
 
 maybeList : Project -> WebData (List Project) -> Html Msg
@@ -38,17 +36,6 @@ maybeList project response =
             text (toString error)
 
 
-testItem : String -> Html Msg
-testItem testValue =
-    let
-        path =
-            projectPath testValue
-    in
-        a [ href path ]
-            [ text testValue
-            ]
-
-
 form : Project -> List Project -> Html Msg
 form project projects =
     let
@@ -63,16 +50,14 @@ form project projects =
 
                 Ok carousel ->
                     div [ id ProjectContainer ]
-                        [ btnPrevious carousel.previous
+                        [ btnPrevious carousel.previous projects
                         , projectItem project
-                        , btnNext carousel.next
+                        , btnNext carousel.next projects
                         ]
     in
         div []
             [ div [ id FlexContainer ]
-                [ Pages.Home.header ]
-            , div [ id FlexContainer ]
-                [ Pages.Home.secondaryHeader project ]
+                [ secondaryHeader project ]
             , carouselView
             ]
 
@@ -81,39 +66,62 @@ projectItem : Project -> Html Msg
 projectItem project =
     div
         [ id FlexContainer ]
-        [ div [ id ProjectImage ]
-            [ text "[IMG]"
-            ]
+        [ div [ id ProjectImage, style [ ( "background-image", "url(./img/" ++ project.img ++ ")" ) ] ]
+            []
         , div [ id ProjectText ]
             [ div []
-                [ h3 [ id ProjectTitle ]
+                [ h3 [ id ProjectDescriptionTitle ]
                     [ text "Description" ]
                 ]
             , div [ id ProjectDescription ]
                 [ text project.description ]
-            , div [ id ProjectDescription ]
-                [ text "-> TO GITHUB <-" ]
             ]
         ]
 
 
-btnPrevious : String -> Html Msg
-btnPrevious project =
+btnPrevious : String -> List Project -> Html Msg
+btnPrevious projectName projects =
     let
         path =
-            projectPath project
-    in
-        a [ class "btn ml1 h1", href path ]
-            [ i [ class "fa fa-caret-left" ] [] ]
+            projectPath projectName
 
-
-btnNext : String -> Html Msg
-btnNext project =
-    let
-        path =
-            projectPath project
+        previousProject =
+            getProjectById projectName projects
     in
-        a
-            [ class "btn ml1 h1", href path ]
-            [ i [ class "fa fa-caret-right" ] []
+        div
+            [ id PreviousProjectImage
+            , style [ ( "background-image", "url(./img/" ++ previousProject.img ++ ")" ) ]
             ]
+            [ a
+                [ id Image
+                , href path
+                ]
+                []
+            ]
+
+
+btnNext : String -> List Project -> Html Msg
+btnNext projectName projects =
+    let
+        path =
+            projectPath projectName
+
+        nextProject =
+            getProjectById projectName projects
+    in
+        div
+            [ id NextProjectImage
+            , style [ ( "background-image", "url(./img/" ++ nextProject.img ++ ")" ) ]
+            ]
+            [ a
+                [ id Image
+                , href path
+                ]
+                []
+            ]
+
+
+secondaryHeader : Project -> Html Msg
+secondaryHeader project =
+    div [ id ProjectTitle ]
+        [ text project.name ]

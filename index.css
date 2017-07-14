@@ -7,17 +7,15 @@ body {
     position: fixed;
     top: 0rem;
     width: 100%;
-    height: 4rem;
-    background-color: #313131;
+    height: 3rem;
     overflow: hidden;
     z-index: 2;
 }
 
 #BodySection {
-    padding-top: 4rem;
+    padding-top: 3rem;
     background-color: #ffffff;
     padding-bottom: 15rem;
-    max-width: 70rem;
     margin: auto;
     z-index: 1;
 }
@@ -27,15 +25,17 @@ body {
     bottom: 0rem;
     width: 100%;
     height: 15rem;
-    background-color: #e7e7e7;
+    background-color: #313131;
     z-index: 0;
 }
 
 #NavContainer {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    color: #ffffff;
     height: 100%;
+    text-align: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e6eaea;;
 }
 
 #FlexContainer {
@@ -66,20 +66,15 @@ body {
 }
 
 #FlexItem {
-    margin: 0.5rem;
-    border: 0.001rem solid #e7e7e7;
-    color: transparent;
+    margin: 0.75rem;
+    position: relative;
+    background-size: cover;
+    background-position: center;
     flex-grow: 1;
-    height: 17rem;
-    opacity: 1;
-    min-width: 20rem;
+    height: 12.5rem;
+    min-width: 30rem;
+    border: 1px solid #e6eaea;;
     text-align: center;
-}
-
-#FlexItem:hover {
-    background-color: #e7e7e7;
-    opacity: 0.5;
-    color: #313131;
 }
 
 #ProjectContainer {
@@ -89,34 +84,189 @@ body {
     list-style: none;
     flex-grow: 1;
     display: inline-flex;
-    align-items: center;
     justify-content: center;
 }
 
 #ProjectImage {
     margin: 0.5rem;
-    border: 0.001rem solid #e7e7e7;
+    position: relative;
+    background-size: cover;
+    background-position: center;
     flex-grow: 1;
-    height: 40rem;
-    width: 35rem;
-    text-align: center;
+    height: 12.5rem;
+    min-width: 20rem;
+    border: 1px solid #e6eaea;;
+}
+
+#PreviousProjectImage {
+    background-size: cover;
+    background-position: center;
+    flex-grow: 1;
+    margin-top: 2rem;
+    height: 9rem;
+    right: 1.5rem;
+    min-width: 5rem;
+    border: 1px solid #e6eaea;;
+}
+
+#NextProjectImage {
+    background-size: cover;
+    background-position: center;
+    flex-grow: 1;
+    margin-top: 2rem;
+    height: 9rem;
+    left: 1.5rem;
+    min-width: 5rem;
+    border: 1px solid #e6eaea;;
 }
 
 #ProjectText {
     margin: 0.5rem;
-    border: 0.001rem solid #e7e7e7;
     flex-grow: 1;
-    height: 40rem;
-    width: 25rem;
+    height: 25rem;
+    width: 20rem;
 }
 
 #ProjectTitle {
     margin: 0.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    font-size: 1.5rem;
+    color: #000000;
     text-align: center;
-    color: #4286f4;
+}
+
+#ProjectDescriptionTitle {
+    margin: 0.5rem;
+    text-align: left;
+    font-size: 0.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e6eaea;;
 }
 
 #ProjectDescription {
     margin: 0.5rem;
     text-align: left;
+    font-size: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e6eaea;;
+}
+
+#TextCenter {
+    position: relative;
+    text-align: center;
+    color: #000000;
+    top: 50%;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+#Image {
+    display: block;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+#Overlay {
+    position: absolute;
+    top: 0rem;
+    bottom: 0rem;
+    left: 0rem;
+    right: 0rem;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(49, 49, 49, 0.25);
+}
+
+#Overlay:hover {
+    opacity: 1;
+}
+
+#NavTitle {
+    position: relative;
+    text-align: center;
+    color: #000000;
+    top: 25%;
+    text-decoration: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+}
+
+@media screen and ( min-width: 741px ) {
+        #NavTitle {
+    font-size: 2rem;
+}
+}
+
+@media screen and ( min-width: 741px ) {
+        #HeaderSection {
+    height: 6rem;
+}
+}
+
+@media screen and ( min-width: 741px ) {
+        #BodySection {
+    padding-top: 6rem;
+}
+}
+
+@media screen and ( min-width: 741px ) {
+        #FlexItem {
+    margin: 1.5rem;
+    height: 25rem;
+}
+}
+
+@media screen and ( min-width: 741px ) {
+        #TextCenter {
+    font-size: 2rem;
+}
+}
+
+@media screen and ( min-width: 741px ) {
+        #ProjectImage {
+    height: 25rem;
+}
+}
+
+@media screen and ( min-width: 741px ) {
+        #PreviousProjectImage {
+    height: 18rem;
+    min-width: 10rem;
+    margin-top: 4rem;
+    right: 3rem;
+}
+}
+
+@media screen and ( min-width: 741px ) {
+        #NextProjectImage {
+    height: 18rem;
+    min-width: 10rem;
+    margin-top: 4rem;
+    left: 3rem;
+}
+}
+
+@media screen and ( min-width: 741px ) {
+        #ProjectTitle {
+    font-size: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+}
+
+@media screen and ( min-width: 741px ) {
+        #ProjectDescription {
+    font-size: 1rem;
+}
+}
+
+@media screen and ( min-width: 741px ) {
+        #ProjectDescriptionTitle {
+    font-size: 1.5rem;
+}
 }
