@@ -1,21 +1,23 @@
 body {
     position: relative;
     min-height: 100vh;
+    background-color: #000000;
+    overflow-y: scroll;
 }
 
 #HeaderSection {
     position: fixed;
     top: 0rem;
     width: 100%;
-    height: 3rem;
+    height: 6rem;
     overflow: hidden;
     z-index: 2;
 }
 
 #BodySection {
-    padding-top: 3rem;
+    padding-top: 6rem;
     background-color: #ffffff;
-    padding-bottom: 15rem;
+    padding-bottom: 25rem;
     margin: auto;
     z-index: 1;
 }
@@ -24,22 +26,27 @@ body {
     position: absolute;
     bottom: 0rem;
     width: 100%;
-    height: 15rem;
-    background-color: #313131;
+    height: 25rem;
+    background-color: #000000;
     z-index: 0;
 }
 
-#NavContainer {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    height: 100%;
-    text-align: center;
+#LandingSection {
+    height: 80vh;
+}
+
+#ContactSection {
     background-color: #ffffff;
-    border-bottom: 1px solid #e6eaea;;
+    height: 100%;
+}
+
+#NavContainer {
+    padding: 2rem;
+    height: 100%;
+    background-color: transparent;
 }
 
 #FlexContainer {
-    padding: 0rem;
     margin: 0rem;
     width: 100%;
     list-style: none;
@@ -66,14 +73,13 @@ body {
 }
 
 #FlexItem {
-    margin: 0.75rem;
+    margin: 2rem;
     position: relative;
     background-size: cover;
     background-position: center;
     flex-grow: 1;
-    height: 12.5rem;
+    height: 25rem;
     min-width: 30rem;
-    border: 1px solid #e6eaea;;
     text-align: center;
 }
 
@@ -88,68 +94,72 @@ body {
 }
 
 #ProjectImage {
-    margin: 0.5rem;
+    margin: 2rem;
     position: relative;
     background-size: cover;
     background-position: center;
     flex-grow: 1;
-    height: 12.5rem;
-    min-width: 20rem;
-    border: 1px solid #e6eaea;;
+    height: 50rem;
 }
 
 #PreviousProjectImage {
+    margin-top: 2rem;
     background-size: cover;
     background-position: center;
     flex-grow: 1;
-    margin-top: 2rem;
     height: 9rem;
     right: 1.5rem;
-    min-width: 5rem;
+    min-width: 2.5rem;
     border: 1px solid #e6eaea;;
 }
 
 #NextProjectImage {
+    margin-top: 2rem;
     background-size: cover;
     background-position: center;
     flex-grow: 1;
-    margin-top: 2rem;
     height: 9rem;
     left: 1.5rem;
-    min-width: 5rem;
+    min-width: 2.5rem;
     border: 1px solid #e6eaea;;
 }
 
 #ProjectText {
-    margin: 0.5rem;
+    margin: 1rem;
     flex-grow: 1;
-    height: 25rem;
     width: 20rem;
 }
 
 #ProjectTitle {
-    margin: 0.5rem;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    font-size: 1.5rem;
+    position: relative;
     color: #000000;
+    display: block;
+    margin: auto;
+    width: 40%;
     text-align: center;
+    top: 40%;
+    font-size: 1.5rem;
+    text-decoration: none;
 }
 
 #ProjectDescriptionTitle {
     margin: 0.5rem;
     text-align: left;
-    font-size: 0.75rem;
+    font-size: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #e6eaea;;
 }
 
 #ProjectDescription {
-    margin: 0.5rem;
-    text-align: left;
-    font-size: 0.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #e6eaea;;
+    position: relative;
+    color: #000000;
+    display: block;
+    margin: auto;
+    width: 40%;
+    text-align: center;
+    top: 40%;
+    font-size: 1.25rem;
+    line-height: 1.75;
+    text-decoration: none;
 }
 
 #TextCenter {
@@ -158,7 +168,7 @@ body {
     color: #000000;
     top: 50%;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 #Image {
@@ -178,7 +188,7 @@ body {
     height: 100%;
     width: 100%;
     opacity: 0;
-    background-color: rgba(49, 49, 49, 0.25);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 #Overlay:hover {
@@ -187,86 +197,41 @@ body {
 
 #NavTitle {
     position: relative;
-    text-align: center;
+    text-align: left;
     color: #000000;
     top: 25%;
     text-decoration: none;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    font-size: 1rem;
-}
-
-@media screen and ( min-width: 741px ) {
-        #NavTitle {
     font-size: 2rem;
 }
+
+#Slogan {
+    position: relative;
+    text-align: center;
+    color: #000000;
+    display: block;
+    top: 40%;
+    text-decoration: none;
+    font-size: 5rem;
 }
 
-@media screen and ( min-width: 741px ) {
-        #HeaderSection {
-    height: 6rem;
-}
-}
-
-@media screen and ( min-width: 741px ) {
-        #BodySection {
-    padding-top: 6rem;
-}
+#FooterText {
+    position: relative;
+    text-align: center;
+    color: #000000;
+    display: block;
+    top: 40%;
+    text-decoration: none;
+    font-size: 5rem;
 }
 
-@media screen and ( min-width: 741px ) {
-        #FlexItem {
-    margin: 1.5rem;
-    height: 25rem;
-}
-}
-
-@media screen and ( min-width: 741px ) {
-        #TextCenter {
-    font-size: 2rem;
-}
-}
-
-@media screen and ( min-width: 741px ) {
-        #ProjectImage {
-    height: 25rem;
-}
-}
-
-@media screen and ( min-width: 741px ) {
-        #PreviousProjectImage {
-    height: 18rem;
-    min-width: 10rem;
-    margin-top: 4rem;
-    right: 3rem;
-}
-}
-
-@media screen and ( min-width: 741px ) {
-        #NextProjectImage {
-    height: 18rem;
-    min-width: 10rem;
-    margin-top: 4rem;
-    left: 3rem;
-}
-}
-
-@media screen and ( min-width: 741px ) {
-        #ProjectTitle {
-    font-size: 3rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-}
-
-@media screen and ( min-width: 741px ) {
-        #ProjectDescription {
-    font-size: 1rem;
-}
-}
-
-@media screen and ( min-width: 741px ) {
-        #ProjectDescriptionTitle {
-    font-size: 1.5rem;
-}
+#FooterNext {
+    position: relative;
+    text-align: center;
+    color: #ffffff;
+    display: block;
+    top: 40%;
+    text-decoration: none;
+    font-size: 5rem;
 }

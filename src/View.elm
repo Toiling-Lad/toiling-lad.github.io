@@ -2,6 +2,7 @@ module View exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Html.Events exposing (onClick)
 import Models exposing (Model)
 import Msgs exposing (Msg)
 import Pages.Project
@@ -19,26 +20,19 @@ view : Model -> Html Msg
 view model =
     div []
         [ div [ id HeaderSection ]
-            [ nav ]
-        , div [ id BodySection ]
-            [ page model ]
-        , div [ id FooterSection ]
-            [ footer ]
+            [ nav model ]
+        , page model
         ]
 
 
-nav : Html Msg
-nav =
+nav : Model -> Html Msg
+nav model =
     div [ id NavContainer ]
         [ a [ id NavTitle, href projectsPath ]
-            [ text "Open-source projects" ]
+            [ text "projects "
+            , errorView model.error
+            ]
         ]
-
-
-footer : Html Msg
-footer =
-    div []
-        []
 
 
 page : Model -> Html Msg
@@ -86,3 +80,13 @@ notFoundView =
     div []
         [ text "Not found"
         ]
+
+
+errorView : Maybe String -> Html msg
+errorView error =
+    case error of
+        Just errorMsg ->
+            text errorMsg
+
+        Nothing ->
+            text ""

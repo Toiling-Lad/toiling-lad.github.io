@@ -1,23 +1,20 @@
 module Routing.Helpers exposing (..)
 
-import Http
 import Json.Decode as Decode
 import Json.Decode.Pipeline exposing (decode, required)
 import Msgs exposing (Msg)
 import Models exposing (Project)
-import RemoteData
+import RemoteData.Http
 
 
 fetchProjects : Cmd Msg
 fetchProjects =
-    Http.get fetchProjectsUrl projectsDecoder
-        |> RemoteData.sendRequest
-        |> Cmd.map Msgs.OnFetchProjects
+    RemoteData.Http.get fetchProjectsUrl Msgs.OnFetchProjects projectsDecoder
 
 
 fetchProjectsUrl : String
 fetchProjectsUrl =
-    "http://localhost:4000/projects"
+    "/api/db.json"
 
 
 projectsDecoder : Decode.Decoder (List Project)
