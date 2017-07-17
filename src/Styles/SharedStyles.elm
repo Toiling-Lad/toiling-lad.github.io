@@ -7,6 +7,8 @@ type CssIds
     = HeaderSection
     | BodySection
     | FooterSection
+    | LandingSection
+    | ContactSection
     | NavContainer
     | FlexContainer
     | FlexHeader
@@ -24,6 +26,9 @@ type CssIds
     | NavTitle
     | PreviousProjectImage
     | NextProjectImage
+    | Slogan
+    | FooterText
+    | FooterNext
 
 
 styleNamespace : Html.CssHelpers.Namespace String class id msg

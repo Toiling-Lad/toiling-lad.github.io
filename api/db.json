@@ -1,67 +1,65 @@
-{
-    "projects": [
-        {
-            "id": "projectA",
-            "name": "Project A",
-            "description": "Lorem Project A ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "img": "Tree-AnalyticsRep.png",
-            "width": 2
-        },
-        {
-            "id": "projectB",
-            "name": "Project B",
-            "description": "Lorem Project B ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "img": "data.png",
-            "width": 1
-        },
-        {
-            "id": "projectC",
-            "name": "Project C",
-            "description": "Lorem Project C ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "img": "Tree-AnalyticsRep.png",
-            "width": 2
-        },
-        {
-            "id": "projectD",
-            "name": "Project D",
-            "description": "Lorem Project D ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "img": "data.png",
-            "width": 4
-        },
-        {
-            "id": "projectE",
-            "name": "Project E",
-            "description": "Lorem Project E ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "img": "data.png",
-            "width": 1
-        },
-        {
-            "id": "projectF",
-            "name": "Project F",
-            "description": "Lorem Project F ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "img": "Tree-AnalyticsRep.png",
-            "width": 1
-        },
-        {
-            "id": "projectG",
-            "name": "Project G",
-            "description": "Lorem Project G ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "img": "data.png",
-            "width": 3
-        },
-        {
-            "id": "projectH",
-            "name": "Project H",
-            "description": "Lorem Project H ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "img": "Tree-AnalyticsRep.png",
-            "width": 2
-        },
-        {
-            "id": "projectI",
-            "name": "Project I",
-            "description": "Lorem Project I ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "img": "Tree-AnalyticsRep.png",
-            "width": 1
-        }
-    ]
-}
+[
+    {
+        "id": "projectA",
+        "name": "Project A",
+        "description": "Lorem Project A ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "img": "Tree-AnalyticsRep.png",
+        "width": 2
+    },
+    {
+        "id": "projectB",
+        "name": "Project B",
+        "description": "Lorem Project B ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "img": "Data.jpg",
+        "width": 1
+    },
+    {
+        "id": "projectC",
+        "name": "Project C",
+        "description": "Lorem Project C ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "img": "Tree-AnalyticsRep.png",
+        "width": 2
+    },
+    {
+        "id": "projectD",
+        "name": "Project D",
+        "description": "Lorem Project D ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "img": "Data.jpg",
+        "width": 4
+    },
+    {
+        "id": "projectE",
+        "name": "Project E",
+        "description": "Lorem Project E ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "img": "Data.jpg",
+        "width": 1
+    },
+    {
+        "id": "projectF",
+        "name": "Project F",
+        "description": "Lorem Project F ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "img": "Tree-AnalyticsRep.png",
+        "width": 1
+    },
+    {
+        "id": "projectG",
+        "name": "Project G",
+        "description": "Lorem Project G ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "img": "Data.jpg",
+        "width": 3
+    },
+    {
+        "id": "projectH",
+        "name": "Project H",
+        "description": "Lorem Project H ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "img": "Tree-AnalyticsRep.png",
+        "width": 2
+    },
+    {
+        "id": "projectI",
+        "name": "Project I",
+        "description": "Lorem Project I ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "img": "Tree-AnalyticsRep.png",
+        "width": 1
+    }
+]

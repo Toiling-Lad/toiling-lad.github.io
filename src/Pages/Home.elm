@@ -15,7 +15,20 @@ import Styles.SharedStyles exposing (..)
 
 view : WebData (List Project) -> Html Msg
 view response =
-    maybeList response
+    div [ id BodySection ]
+        [ maybeList response
+        , homeFooter
+        ]
+
+
+homeFooter : Html Msg
+homeFooter =
+    section [ id FooterSection ]
+        [ div [ id ContactSection ]
+            [ a [ id FooterText ]
+                [ text "Contact Information" ]
+            ]
+        ]
 
 
 maybeList : WebData (List Project) -> Html Msg
@@ -37,7 +50,11 @@ maybeList response =
 list : List Project -> Html Msg
 list projects =
     div []
-        [ div [ id FlexContainer ]
+        [ div [ id LandingSection ]
+            [ div [ id Slogan ]
+                [ text "Check these projects out!" ]
+            ]
+        , div [ id FlexContainer ]
             (List.map projectItem projects)
         ]
 
