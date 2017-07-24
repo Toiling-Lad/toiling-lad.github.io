@@ -3,9 +3,7 @@ module Update exposing (..)
 import Msgs exposing (Msg)
 import Models exposing (Model)
 import Routing.Router exposing (parseLocation)
-import Dom.Scroll
-import Dom
-import Task
+import Ports exposing (..)
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -19,15 +17,7 @@ update msg model =
                 newRoute =
                     parseLocation location
             in
-                ( { model | route = newRoute }, Cmd.none )
+                ( { model | route = newRoute }, Ports.scrollToTop () )
 
-        Msgs.ScrollTo id ->
-            ( model, Task.attempt Msgs.ScrollToResult (Dom.Scroll.toTop id) )
-
-        Msgs.ScrollToResult result ->
-            case result of
-                Err (Dom.NotFound id) ->
-                    ( { model | error = Just ("Could not find dom id: " ++ id) }, Cmd.none )
-
-                Ok () ->
-                    ( { model | error = Nothing }, Cmd.none )
+        Msgs.OnScroll scrollProperties ->
+            ( { model | scroll = scrollProperties }, Cmd.none )

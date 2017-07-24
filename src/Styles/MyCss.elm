@@ -12,19 +12,21 @@ type CssIds
     | FooterSection
     | LandingSection
     | ContactSection
-    | NavContainer
     | FlexContainer
     | FlexHeader
     | FlexSecondaryHeader
     | FlexItem
+    | ItemImage
+    | NavContainer
     | ProjectContainer
     | ProjectImage
     | ProjectText
     | ProjectTitle
-    | ProjectDescription
+    | WorkContainer
+    | WorkTitle
+    | WorkIntro
+    | WorkTag
     | ProjectDescriptionTitle
-    | NextProjectImage
-    | PreviousProjectImage
     | TextCenter
     | Image
     | Overlay
@@ -67,14 +69,15 @@ css =
             , zIndex 0
             ]
         , id LandingSection
-            [ height (vh 80)
+            [ height (vh 100)
+            , margin (rem 3.5)
             ]
         , id ContactSection
             [ backgroundColor colorWhite
             , height (pct 100)
             ]
         , id NavContainer
-            [ padding (rem 2)
+            [ padding (rem 3.5)
             , height (pct 100)
             , backgroundColor transparent
             ]
@@ -82,8 +85,10 @@ css =
             [ margin (rem 0)
             , width (pct 100)
             , listStyle none
+            , paddingRight (rem 1.75)
+            , paddingLeft (rem 1.75)
+            , alignItems stretch
             , display inlineFlex
-            , alignItems center
             , justifyContent center
             , flexWrap wrap
             ]
@@ -102,15 +107,20 @@ css =
             , textDecoration none
             ]
         , id FlexItem
-            [ margin (rem 2)
+            [ margin (rem 1.75)
             , position relative
+            , width (pct 44)
+            , height (vh 100)
+              -- , backgroundSize cover
+              -- , backgroundPosition center
+            , flexGrow (num 1)
+              -- , width (rem 30)
+            ]
+        , id ItemImage
+            [ position relative
             , backgroundSize cover
             , backgroundPosition center
-            , flexGrow (num 1)
-            , height (rem 25)
-            , minWidth (rem 30)
-              -- , border3 (px 1) solid colorGrey
-            , textAlign center
+            , height (pct 70)
             ]
         , id ProjectContainer
             [ padding (rem 0)
@@ -122,36 +132,14 @@ css =
             , justifyContent center
             ]
         , id ProjectImage
-            [ margin (rem 2)
-            , position relative
+            [ position relative
             , backgroundSize cover
             , backgroundPosition center
             , flexGrow (num 1)
             , height (rem 50)
-              -- , border3 (px 1) solid colorGrey
-            ]
-        , id PreviousProjectImage
-            [ marginTop (rem 2)
-            , backgroundSize cover
-            , backgroundPosition center
-            , flexGrow (num 1)
-            , height (rem 9)
-            , right (rem 1.5)
-            , minWidth (rem 2.5)
-            , border3 (px 1) solid colorGrey
-            ]
-        , id NextProjectImage
-            [ marginTop (rem 2)
-            , backgroundSize cover
-            , backgroundPosition center
-            , flexGrow (num 1)
-            , height (rem 9)
-            , left (rem 1.5)
-            , minWidth (rem 2.5)
-            , border3 (px 1) solid colorGrey
             ]
         , id ProjectText
-            [ margin (rem 1)
+            [ margin (rem 1.5)
             , flexGrow (num 1)
             , width (rem 20)
             ]
@@ -160,27 +148,43 @@ css =
             , color colorBlack
             , display block
             , margin auto
-            , width (pct 40)
-            , textAlign center
-            , top (pct 40)
-            , fontSize (rem 1.5)
+            , maxWidth (px 640)
+            , top (vh 25)
+            , fontSize (rem 2.5)
             , textDecoration none
             ]
-        , id ProjectDescriptionTitle
-            [ margin (rem 0.5)
+        , id WorkContainer
+            [ marginBottom (rem 1.5)
+            , marginTop (rem 1.5)
+            ]
+        , id WorkTitle
+            [ color colorBlack
             , textAlign left
-            , fontSize (rem 1.5)
-            , paddingBottom (rem 1)
+            , fontSize (rem 1)
+            , textDecoration none
+            ]
+        , id WorkIntro
+            [ color colorGrey
+            , marginTop (rem 1.5)
+            , textAlign left
+            , fontSize (rem 1)
+            , textDecoration none
+            ]
+        , id WorkTag
+            [ marginTop (rem 1.5)
+            , color colorGreyLight
+            , marginBottom (rem 1.5)
+            , textAlign left
+            , fontSize (rem 0.9)
+            , textDecoration none
             ]
         , id ProjectDescription
             [ position relative
             , color colorBlack
-            , display block
-            , margin auto
-            , width (pct 40)
-            , textAlign center
-            , top (pct 40)
-            , fontSize (rem 1.25)
+              -- , display block
+              -- , margin auto
+            , maxWidth (px 640)
+            , top (pct 50)
             , lineHeight (num 1.75)
             , textDecoration none
             ]
@@ -217,10 +221,7 @@ css =
             [ position relative
             , textAlign left
             , color colorBlack
-            , top (pct 25)
             , textDecoration none
-            , paddingTop (rem 1)
-            , paddingBottom (rem 1)
             , fontSize (rem 2)
             ]
         , id Slogan
@@ -230,7 +231,7 @@ css =
             , display block
             , top (pct 40)
             , textDecoration none
-            , fontSize (rem 5)
+            , fontSize (rem 4.5)
             ]
         , id FooterText
             [ position relative
@@ -239,14 +240,14 @@ css =
             , display block
             , top (pct 40)
             , textDecoration none
-            , fontSize (rem 5)
+            , fontSize (rem 4.5)
             ]
         , id FooterNext
             [ position relative
             , textAlign center
             , color colorWhite
             , display block
-            , top (pct 40)
+              -- , top (pct 40)
             , textDecoration none
             , fontSize (rem 5)
             ]
@@ -287,14 +288,14 @@ colorBlack =
     hex "000000"
 
 
-colorLightGrey : Color
-colorLightGrey =
-    hex "e7e7e7"
-
-
 colorGrey : Color
 colorGrey =
-    hex "e6eaea;"
+    hex "4E4F52"
+
+
+colorGreyLight : Color
+colorGreyLight =
+    hex "909398"
 
 
 colorTransparent : Color
@@ -309,9 +310,9 @@ colorBlue =
 
 headerHeightLarge : Rem
 headerHeightLarge =
-    (rem 6)
+    (rem 8)
 
 
-footerHeight : Rem
+footerHeight : Vh
 footerHeight =
-    (rem 25)
+    (vh 100)

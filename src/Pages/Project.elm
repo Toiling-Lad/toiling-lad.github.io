@@ -2,7 +2,6 @@ module Pages.Project exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (onClick)
 import Msgs exposing (Msg)
 import Models exposing (Project, initialModel)
 import Routing.Router exposing (projectPath)
@@ -78,25 +77,58 @@ projectView project =
             [ div [ id ProjectTitle ]
                 [ text project.description ]
             ]
-        , div
-            [ id ProjectImage, style [ ( "background-image", "url(./img/" ++ project.img ++ ")" ) ] ]
-            []
         , div [ id FlexContainer ]
-            [ div [ id FlexItem ]
-                [ div [ id ProjectDescription ]
-                    [ text project.description
-                    ]
+            [ div
+                [ id FlexItem
+                , style [ ( "width", "100%" ) ]
                 ]
-            , div [ id FlexItem, style [ ( "background-image", "url(./img/" ++ project.img ++ ")" ) ] ]
-                []
-            , div [ id FlexItem, style [ ( "background-image", "url(./img/" ++ project.img ++ ")" ) ] ]
-                []
-            , div [ id FlexItem, style [ ( "background-image", "url(./img/" ++ project.img ++ ")" ) ] ]
-                []
+                [ div
+                    [ id ItemImage
+                    , style [ ( "background-image", "url(./img/" ++ project.img ++ ")" ) ]
+                    ]
+                    []
+                ]
+            , div
+                [ id FlexItem ]
+                [ div
+                    [ id ItemImage
+                    , style [ ( "background-image", "url(./img/" ++ project.img ++ ")" ) ]
+                    ]
+                    []
+                ]
             , div [ id FlexItem ]
                 [ div [ id ProjectDescription ]
                     [ text project.description
                     ]
+                ]
+            , div [ id FlexItem ]
+                [ div [ id ProjectDescription ]
+                    [ text project.description
+                    ]
+                ]
+            , div
+                [ id FlexItem ]
+                [ div
+                    [ id ItemImage
+                    , style [ ( "background-image", "url(./img/" ++ project.img ++ ")" ) ]
+                    ]
+                    []
+                ]
+            , div
+                [ id FlexItem ]
+                [ div
+                    [ id ItemImage
+                    , style [ ( "background-image", "url(./img/" ++ project.img ++ ")" ) ]
+                    ]
+                    []
+                ]
+            , div
+                [ id FlexItem ]
+                [ div
+                    [ id ItemImage
+                    , style [ ( "background-image", "url(./img/" ++ project.img ++ ")" ) ]
+                    ]
+                    []
                 ]
             ]
         ]
@@ -114,6 +146,5 @@ nextProject projectName projects =
         a
             [ id FooterNext
             , href path
-            , onClick (Msgs.ScrollTo "main")
             ]
             [ text "Next project" ]

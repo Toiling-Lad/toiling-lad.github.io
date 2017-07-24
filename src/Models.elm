@@ -6,6 +6,7 @@ import RemoteData exposing (WebData)
 type alias Model =
     { projects : WebData (List Project)
     , route : Route
+    , scroll : ScrollProperties
     , error : Maybe String
     }
 
@@ -14,6 +15,7 @@ initialModel : Route -> Model
 initialModel route =
     { projects = RemoteData.Loading
     , route = route
+    , scroll = initScroll
     , error = Nothing
     }
 
@@ -30,14 +32,21 @@ type alias Project =
     , description : String
     , img : String
     , width : Float
+    , intro : String
+    , tag : String
     }
 
 
-new : Project
-new =
-    { id = "0"
-    , name = ""
-    , description = ""
-    , img = ""
-    , width = 1
+initScroll : { clientHeight : Int, scrollHeight : Int, scrollTop : Int }
+initScroll =
+    { scrollTop = 0
+    , scrollHeight = 0
+    , clientHeight = 0
+    }
+
+
+type alias ScrollProperties =
+    { scrollTop : Int
+    , scrollHeight : Int
+    , clientHeight : Int
     }

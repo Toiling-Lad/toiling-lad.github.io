@@ -7,6 +7,7 @@ import Update exposing (update)
 import Routing.Helpers exposing (fetchProjects)
 import Navigation exposing (Location)
 import Routing.Router
+import Ports exposing (onFeedScroll)
 
 
 main : Program Never Model Msg
@@ -30,4 +31,4 @@ init location =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    Sub.none
+    onFeedScroll Msgs.OnScroll

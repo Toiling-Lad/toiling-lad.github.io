@@ -9,7 +9,7 @@ import Routing.Router exposing (projectPath, projectsPath)
 import Styles.SharedStyles exposing (..)
 
 
-{ id } =
+{ id, class } =
     styleNamespace
 
 
@@ -23,11 +23,15 @@ view response =
 
 homeFooter : Html Msg
 homeFooter =
-    section [ id FooterSection ]
-        [ div [ id ContactSection ]
-            [ a [ id FooterText ]
-                [ text "Contact Information" ]
+    section
+        [ id FooterSection
+        , style [ ( "background-color", "white" ) ]
+        ]
+        [ a
+            [ id FooterNext
+            , style [ ( "color", "black" ) ]
             ]
+            [ text "... and more to come" ]
         ]
 
 
@@ -62,40 +66,38 @@ list projects =
 projectItem : Project -> Html Msg
 projectItem project =
     let
-        widthValue =
-            case project.width of
-                1 ->
-                    "10rem"
-
-                2 ->
-                    "20rem"
-
-                3 ->
-                    "30rem"
-
-                4 ->
-                    "40rem"
-
-                _ ->
-                    "20rem"
-
         path =
             projectPath project.id
     in
         div
             [ id FlexItem
-            , style [ ( "background-image", "url(./img/" ++ project.img ++ ")" ), ( "width", widthValue ) ]
             ]
-            [ a
-                [ id Overlay
-                , href path
-                , style
-                    [ ( "transition", ".5s ease" )
-                    , ( "text-decoration", "none" )
+            [ div
+                [ id ItemImage
+                , style [ ( "background-image", "url(./img/" ++ project.img ++ ")" ) ]
+                ]
+                [ a
+                    [ id Overlay
+                    , href path
+                    , style
+                        [ ( "transition", ".5s ease" )
+                        , ( "text-decoration", "none" )
+                        ]
+                    ]
+                    [ div
+                        [ id TextCenter ]
+                        [ text project.name ]
                     ]
                 ]
-                [ div
-                    [ id TextCenter ]
+            , div [ id WorkContainer ]
+                [ a
+                    [ href path
+                    , id WorkTitle
+                    ]
                     [ text project.name ]
+                , div [ id WorkIntro ]
+                    [ text project.intro ]
+                , div [ id WorkTag ]
+                    [ text project.tag ]
                 ]
             ]
