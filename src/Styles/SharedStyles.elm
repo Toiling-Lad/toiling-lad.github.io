@@ -9,23 +9,25 @@ type CssIds
     | FooterSection
     | LandingSection
     | ContactSection
-    | NavContainer
     | FlexContainer
     | FlexHeader
     | FlexSecondaryHeader
     | FlexItem
+    | ItemImage
+    | NavContainer
     | ProjectContainer
     | ProjectImage
     | ProjectText
     | ProjectTitle
     | ProjectDescription
-    | ProjectDescriptionTitle
+    | WorkContainer
+    | WorkTitle
+    | WorkIntro
+    | WorkTag
     | TextCenter
     | Image
     | Overlay
     | NavTitle
-    | PreviousProjectImage
-    | NextProjectImage
     | Slogan
     | FooterText
     | FooterNext

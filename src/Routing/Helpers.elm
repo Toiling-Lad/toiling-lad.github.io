@@ -30,6 +30,8 @@ projectDecoder =
         |> required "description" Decode.string
         |> required "img" Decode.string
         |> required "width" Decode.float
+        |> required "intro" Decode.string
+        |> required "tag" Decode.string
 
 
 {-|
@@ -49,6 +51,6 @@ getProjectById projectId projects =
                     project
 
                 Nothing ->
-                    { id = "nothing", name = "nothing", description = "nothing", img = "nothing", width = 0 }
+                    { id = "nothing", name = "nothing", description = "nothing", img = "nothing", width = 0, intro = "nothing", tag = "nothing" }
     in
         getProject

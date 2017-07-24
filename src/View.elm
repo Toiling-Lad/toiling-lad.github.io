@@ -2,7 +2,6 @@ module View exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (onClick)
 import Models exposing (Model)
 import Msgs exposing (Msg)
 import Pages.Project
@@ -12,7 +11,7 @@ import RemoteData
 import Styles.SharedStyles exposing (..)
 
 
-{ id } =
+{ id, class } =
     styleNamespace
 
 
@@ -27,12 +26,22 @@ view model =
 
 nav : Model -> Html Msg
 nav model =
-    div [ id NavContainer ]
-        [ a [ id NavTitle, href projectsPath ]
-            [ text "projects "
-            , errorView model.error
+    let
+        testValuesScroll =
+            toString model.scroll
+    in
+        div
+            [ id NavContainer
             ]
-        ]
+            [ a
+                [ id NavTitle
+                , href projectsPath
+                ]
+                [ text "projects"
+                  -- , text testValuesScroll
+                , errorView model.error
+                ]
+            ]
 
 
 page : Model -> Html Msg
