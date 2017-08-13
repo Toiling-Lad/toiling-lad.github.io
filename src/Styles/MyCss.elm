@@ -34,6 +34,7 @@ type CssIds
     | Slogan
     | FooterText
     | FooterNext
+    | SvgIcon
 
 
 css : Stylesheet
@@ -70,14 +71,17 @@ css =
             ]
         , id LandingSection
             [ height (vh 100)
-            , margin (rem 3.5)
+            , padding gapWidth
+            , displayFlex
+            , alignItems center
+            , justifyContent center
             ]
         , id ContactSection
             [ backgroundColor colorWhite
             , height (pct 100)
             ]
         , id NavContainer
-            [ padding (rem 3.5)
+            [ padding gapWidth
             , height (pct 100)
             , backgroundColor transparent
             ]
@@ -85,8 +89,8 @@ css =
             [ margin (rem 0)
             , width (pct 100)
             , listStyle none
-            , paddingRight (rem 1.75)
-            , paddingLeft (rem 1.75)
+            , paddingRight gapWidthHalf
+            , paddingLeft gapWidthHalf
             , alignItems stretch
             , display inlineFlex
             , justifyContent center
@@ -107,20 +111,19 @@ css =
             , textDecoration none
             ]
         , id FlexItem
-            [ margin (rem 1.75)
+            [ margin gapWidthHalf
             , position relative
             , width (pct 44)
-            , height (vh 100)
-              -- , backgroundSize cover
-              -- , backgroundPosition center
+            , displayFlex
+            , flexDirection column
+            , height (vh 95)
             , flexGrow (num 1)
-              -- , width (rem 30)
             ]
         , id ItemImage
             [ position relative
             , backgroundSize cover
             , backgroundPosition center
-            , height (pct 70)
+            , height (pct 100)
             ]
         , id ProjectContainer
             [ padding (rem 0)
@@ -139,23 +142,27 @@ css =
             , height (rem 50)
             ]
         , id ProjectText
-            [ margin (rem 1.5)
-            , flexGrow (num 1)
-            , width (rem 20)
+            [ position relative
+            , color colorBlack
+            , display block
+            , margin auto
+            , maxWidth (px 640)
+            , fontSize (rem 2.5)
+            , textDecoration none
             ]
         , id ProjectTitle
             [ position relative
             , color colorBlack
             , display block
             , margin auto
+            , bottom headerHeightLarge
             , maxWidth (px 640)
-            , top (vh 25)
-            , fontSize (rem 2.5)
+            , fontSize (rem 2)
             , textDecoration none
+            , lineHeight (rem 4)
             ]
         , id WorkContainer
-            [ marginBottom (rem 1.5)
-            , marginTop (rem 1.5)
+            [ marginTop (rem 1.5)
             ]
         , id WorkTitle
             [ color colorBlack
@@ -173,7 +180,6 @@ css =
         , id WorkTag
             [ marginTop (rem 1.5)
             , color colorGreyLight
-            , marginBottom (rem 1.5)
             , textAlign left
             , fontSize (rem 0.9)
             , textDecoration none
@@ -181,11 +187,9 @@ css =
         , id ProjectDescription
             [ position relative
             , color colorBlack
-              -- , display block
-              -- , margin auto
             , maxWidth (px 640)
             , top (pct 50)
-            , lineHeight (num 1.75)
+            , lineHeight gapWidthHalf
             , textDecoration none
             ]
         , id TextCenter
@@ -222,14 +226,16 @@ css =
             , textAlign left
             , color colorBlack
             , textDecoration none
+            , displayFlex
             , fontSize (rem 2)
+            , alignItems center
             ]
         , id Slogan
             [ position relative
             , textAlign center
             , color colorBlack
             , display block
-            , top (pct 40)
+            , bottom headerHeightLarge
             , textDecoration none
             , fontSize (rem 4.5)
             ]
@@ -247,9 +253,12 @@ css =
             , textAlign center
             , color colorWhite
             , display block
-              -- , top (pct 40)
             , textDecoration none
             , fontSize (rem 5)
+            ]
+        , id SvgIcon
+            [ width (rem 3)
+            , height (rem 1.3)
             ]
         ]
 
@@ -311,6 +320,16 @@ colorBlue =
 headerHeightLarge : Rem
 headerHeightLarge =
     (rem 8)
+
+
+gapWidth : Rem
+gapWidth =
+    (rem 3.5)
+
+
+gapWidthHalf : Rem
+gapWidthHalf =
+    (rem 1.75)
 
 
 footerHeight : Vh

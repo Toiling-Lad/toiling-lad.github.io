@@ -3,12 +3,15 @@ module View exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Models exposing (Model)
+import Color exposing (..)
 import Msgs exposing (Msg)
 import Pages.Project
 import Routing.Router exposing (projectPath, projectsPath)
 import Pages.Home
 import RemoteData
 import Styles.SharedStyles exposing (..)
+import Material.Icons.Hardware exposing (keyboard_arrow_backspace)
+import Svg exposing (svg)
 
 
 { id, class } =
@@ -27,8 +30,8 @@ view model =
 nav : Model -> Html Msg
 nav model =
     let
-        testValuesScroll =
-            toString model.scroll
+        svgIcon =
+            navigationText (toString model.route)
     in
         div
             [ id NavContainer
@@ -37,8 +40,8 @@ nav model =
                 [ id NavTitle
                 , href projectsPath
                 ]
-                [ text "projects"
-                  -- , text testValuesScroll
+                [ svgIcon
+                , text "projects"
                 , errorView model.error
                 ]
             ]
@@ -61,7 +64,7 @@ projectPage : Model -> String -> Html Msg
 projectPage model projectId =
     case model.projects of
         RemoteData.NotAsked ->
-            text ""
+            Html.text ""
 
         RemoteData.Loading ->
             text "Loading ..."
@@ -99,3 +102,15 @@ errorView error =
 
         Nothing ->
             text ""
+
+
+navigationText location =
+    case location of
+        "ProjectsRoute" ->
+            svg
+                [ id SvgIcon ]
+                []
+
+        _ ->
+            svg [ id SvgIcon ]
+                [ keyboard_arrow_backspace Color.black 25 ]

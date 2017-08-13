@@ -25,59 +25,5 @@
         "width": 2,
         "intro": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
         "tag": "Tag"
-    },
-    {
-        "id": "projectD",
-        "name": "Project D",
-        "description": "Lorem Project D ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "img": "Tree-AnalyticsRep.png",
-        "width": 4,
-        "intro": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-        "tag": "Tag"
-    },
-    {
-        "id": "projectE",
-        "name": "Project E",
-        "description": "Lorem Project E ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "img": "Tree-AnalyticsRep.png",
-        "width": 1,
-        "intro": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-        "tag": "Tag"
-    },
-    {
-        "id": "projectF",
-        "name": "Project F",
-        "description": "Lorem Project F ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "img": "Tree-AnalyticsRep.png",
-        "width": 1,
-        "intro": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-        "tag": "Tag"
-    },
-    {
-        "id": "projectG",
-        "name": "Project G",
-        "description": "Lorem Project G ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "img": "Tree-AnalyticsRep.png",
-        "width": 3,
-        "intro": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-        "tag": "Tag"
-    },
-    {
-        "id": "projectH",
-        "name": "Project H",
-        "description": "Lorem Project H ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "img": "Tree-AnalyticsRep.png",
-        "width": 2,
-        "intro": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-        "tag": "Tag"
-    },
-    {
-        "id": "projectI",
-        "name": "Project I",
-        "description": "Lorem Project I ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "img": "Tree-AnalyticsRep.png",
-        "width": 1,
-        "intro": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-        "tag": "Tag"
     }
 ]
