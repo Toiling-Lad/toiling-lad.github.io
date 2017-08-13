@@ -11,6 +11,9 @@ exports.init = function init(app) {
         var st = scrollTop;
         document.getElementById('NavTitle').style.color = "black";
 
+        if (document.querySelector('svg#SvgIcon > svg > path')) {
+            document.querySelector('svg#SvgIcon > svg > path').style.fill = "black";
+        }
 
         if (Math.abs(lastScrollTop - st) <= delta)
             return;
@@ -30,6 +33,7 @@ exports.init = function init(app) {
                 header.style.transition = "all 300ms linear";
                 header.style.visibility = "visible";
                 document.getElementById('NavTitle').style.color = "white";
+                document.querySelector('svg#SvgIcon > svg > path').style.fill = "white";
 
             }
         } else {
@@ -58,7 +62,7 @@ exports.init = function init(app) {
 
             if ((elementBottomPosition >= windowTopPosition) && (elementTopPosition <= windowBottomPosition)) {
                 element.style.transform = "translate3d(0px, -100px, 0px)";
-                element.style.transition = "all 600ms linear";
+                element.style.transition = "all 400ms linear";
             } else if (elementBottomPosition >= windowTopPosition) {
                 element.style.transform = "translate3d(0px, 0px, 0px)";
                 element.removeAttribute = "style";
@@ -94,9 +98,10 @@ exports.init = function init(app) {
 
 
     function setTranslate(xPos, yPos, el) {
-        // matrix3d(0.999985, -0.00259838, 0.00472436, 0, 0.00259841, 0.999997, 0, 0, -0.00472434, 1.22758e-05, 0.999989, 0, 0, -2.70687, 0, 1)
-        // el.style.transform = `matrix3d(${xPos}, ${yPos}px, 0)`;
-        el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+        el.style.transform = `matrix3d( ${(yPos + 2) / 500}, 0, 0, 0, 
+                                        0, ${(yPos + 1) / 500}, 0, 0, 
+                                        0, 0, 20, 0, 
+                                        0, ${(yPos + 1)}, 0, 1)`;
         el.style.transition = "all 200ms linear";
 
     }

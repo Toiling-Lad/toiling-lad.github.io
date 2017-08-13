@@ -96,16 +96,6 @@ projectView project =
                     ]
                     []
                 ]
-            , div [ id FlexItem ]
-                [ div [ id ProjectDescription ]
-                    [ text project.description
-                    ]
-                ]
-            , div [ id FlexItem ]
-                [ div [ id ProjectDescription ]
-                    [ text project.description
-                    ]
-                ]
             , div
                 [ id FlexItem ]
                 [ div
@@ -121,6 +111,16 @@ projectView project =
                     , style [ ( "background-image", "url(./img/" ++ project.img ++ ")" ) ]
                     ]
                     []
+                ]
+            , div [ id FlexItem ]
+                [ div [ id ProjectText ]
+                    [ text project.description
+                    ]
+                ]
+            , div [ id FlexItem ]
+                [ div [ id ProjectText ]
+                    [ text project.description
+                    ]
                 ]
             , div
                 [ id FlexItem ]

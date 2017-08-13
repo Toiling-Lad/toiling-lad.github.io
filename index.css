@@ -33,7 +33,10 @@ body {
 
 #LandingSection {
     height: 100vh;
-    margin: 3.5rem;
+    padding: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #ContactSection {
@@ -79,7 +82,9 @@ body {
     margin: 1.75rem;
     position: relative;
     width: 44%;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
     flex-grow: 1;
 }
 
@@ -87,7 +92,7 @@ body {
     position: relative;
     background-size: cover;
     background-position: center;
-    height: 70%;
+    height: 100%;
 }
 
 #ProjectContainer {
@@ -109,9 +114,13 @@ body {
 }
 
 #ProjectText {
-    margin: 1.5rem;
-    flex-grow: 1;
-    width: 20rem;
+    position: relative;
+    color: #000000;
+    display: block;
+    margin: auto;
+    max-width: 640px;
+    font-size: 2.5rem;
+    text-decoration: none;
 }
 
 #ProjectTitle {
@@ -119,14 +128,14 @@ body {
     color: #000000;
     display: block;
     margin: auto;
+    bottom: 8rem;
     max-width: 640px;
-    top: 25vh;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-decoration: none;
+    line-height: 4rem;
 }
 
 #WorkContainer {
-    margin-bottom: 1.5rem;
     margin-top: 1.5rem;
 }
 
@@ -148,7 +157,6 @@ body {
 #WorkTag {
     margin-top: 1.5rem;
     color: #909398;
-    margin-bottom: 1.5rem;
     text-align: left;
     font-size: 0.9rem;
     text-decoration: none;
@@ -159,7 +167,7 @@ body {
     color: #000000;
     max-width: 640px;
     top: 50%;
-    line-height: 1.75;
+    line-height: 1.75rem;
     text-decoration: none;
 }
 
@@ -201,7 +209,9 @@ body {
     text-align: left;
     color: #000000;
     text-decoration: none;
+    display: flex;
     font-size: 2rem;
+    align-items: center;
 }
 
 #Slogan {
@@ -209,7 +219,7 @@ body {
     text-align: center;
     color: #000000;
     display: block;
-    top: 40%;
+    bottom: 8rem;
     text-decoration: none;
     font-size: 4.5rem;
 }
@@ -231,4 +241,9 @@ body {
     display: block;
     text-decoration: none;
     font-size: 5rem;
+}
+
+#SvgIcon {
+    width: 3rem;
+    height: 1.3rem;
 }

@@ -31,6 +31,7 @@ type CssIds
     | Slogan
     | FooterText
     | FooterNext
+    | SvgIcon
 
 
 styleNamespace : Html.CssHelpers.Namespace String class id msg
