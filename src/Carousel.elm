@@ -1,12 +1,6 @@
 module Carousel exposing (..)
 
-
-type alias Carousel a =
-    { previous : a
-    , current : a
-    , next : a
-    , rest : List a
-    }
+import Types exposing (Carousel)
 
 
 {-|
