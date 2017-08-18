@@ -104,6 +104,7 @@ errorView error =
             text ""
 
 
+navigationText : String -> Html msg
 navigationText location =
     case location of
         "ProjectsRoute" ->

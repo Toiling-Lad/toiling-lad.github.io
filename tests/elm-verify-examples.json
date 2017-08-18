@@ -1,7 +1,6 @@
 {
     "root": "../src",
     "tests": [
-        "Carousel",
-        "Routing.Helpers"
+        "Carousel"
     ]
 }
