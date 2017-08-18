@@ -44,7 +44,6 @@ onwards { previous, current, next, rest } =
 
     backwards { previous = 1, current = 2, next = 3, rest = [4, 5, 6]}
     --> { previous = 6, current = 1, next = 2, rest = [3, 4, 5]}
-
 -}
 backwards : Carousel a -> Carousel a
 backwards { previous, current, next, rest } =
@@ -76,7 +75,6 @@ backwards { previous, current, next, rest } =
 
     fromList "Meera" [ "Cersei", "Hodor", "Joffrey", "Meera" ]
     --> Ok { previous = "Joffrey", current = "Meera", next = "Cersei", rest = ["Hodor"] }
-
 -}
 fromList : a -> List a -> Result String (Carousel a)
 fromList needle list =

@@ -34,11 +34,6 @@ projectDecoder =
         |> required "tag" Decode.string
 
 
-{-|
-    getProjectById "1" [{id = "1", name = "project A", description = "Lorem..", img = "asdads", width = 1 }, {id = "2", name = "project B", description = "Lorem..", img = "asdads", width = 2 }]
-    --> {id = "1", name = "project A", description = "Lorem..", img = "asdads", width = 1 }
-
--}
 getProjectById : String -> List Project -> Project
 getProjectById projectId projects =
     let
