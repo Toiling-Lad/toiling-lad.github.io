@@ -5,7 +5,7 @@
     "repository": "https://github.com/Toiling-Lad/toiling-lad.github.io",
     "license": "MIT",
     "scripts": {
-        "build": "elm-make && npm install && yarn styles",
+        "build": "elm-make && npm install && yarn styles && webpack",
         "start": "webpack-dev-server --port 3000",
         "styles": "elm-css src/Styles/Stylesheets.elm",
         "deploy": "git push origin `git subtree split --prefix dist dev`:master",

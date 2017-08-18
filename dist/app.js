@@ -13591,7 +13591,18 @@ var _user$project$Pages_Home$homeFooter = A2(
 			},
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html$text('... and more to come'),
+				_0: A2(
+					_elm_lang$html$Html$a,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$href('https://github.com/Toiling-Lad/toiling-lad.github.io'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Link to sauce!'),
+						_1: {ctor: '[]'}
+					}),
 				_1: {ctor: '[]'}
 			}),
 		_1: {ctor: '[]'}

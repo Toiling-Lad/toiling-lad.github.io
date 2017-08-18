@@ -31,7 +31,10 @@ homeFooter =
             [ id FooterNext
             , style [ ( "color", "black" ) ]
             ]
-            [ text "... and more to come" ]
+            [ a [ href "https://github.com/Toiling-Lad/toiling-lad.github.io" ]
+                [ text "Link to sauce!"
+                ]
+            ]
         ]
 
 
