@@ -1,6 +1,6 @@
 port module Ports exposing (..)
 
-import Models exposing (ScrollProperties)
+import Types exposing (ScrollProperties)
 
 
 -- Scrolling

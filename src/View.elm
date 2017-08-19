@@ -2,13 +2,13 @@ module View exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Models exposing (Model)
+import Types exposing (Model, Route(ProjectsRoute, ProjectRoute, NotFoundRoute))
 import Color exposing (..)
 import Msgs exposing (Msg)
-import Pages.Project
+import Pages.Project exposing (projectView)
 import Routing.Router exposing (projectPath, projectsPath)
-import Pages.Home
-import RemoteData
+import Pages.Home exposing (homeView)
+import RemoteData exposing (RemoteData(NotAsked, Loading, Success, Failure))
 import Styles.SharedStyles exposing (..)
 import Material.Icons.Hardware exposing (keyboard_arrow_backspace)
 import Svg exposing (svg)
@@ -50,26 +50,26 @@ nav model =
 page : Model -> Html Msg
 page model =
     case model.route of
-        Models.ProjectsRoute ->
-            Pages.Home.view model.projects
+        ProjectsRoute ->
+            homeView model.projects
 
-        Models.ProjectRoute id ->
+        ProjectRoute id ->
             projectPage model id
 
-        Models.NotFoundRoute ->
+        NotFoundRoute ->
             notFoundView
 
 
 projectPage : Model -> String -> Html Msg
 projectPage model projectId =
     case model.projects of
-        RemoteData.NotAsked ->
+        NotAsked ->
             Html.text ""
 
-        RemoteData.Loading ->
+        Loading ->
             text "Loading ..."
 
-        RemoteData.Success projects ->
+        Success projects ->
             let
                 maybeProject =
                     projects
@@ -78,12 +78,12 @@ projectPage model projectId =
             in
                 case maybeProject of
                     Just project ->
-                        Pages.Project.view project model.projects
+                        projectView project model.projects
 
                     Nothing ->
-                        Pages.Home.view model.projects
+                        homeView model.projects
 
-        RemoteData.Failure err ->
+        Failure err ->
             text (toString err)
 
 

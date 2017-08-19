@@ -3,7 +3,7 @@ module Pages.Home exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Msgs exposing (Msg)
-import Models exposing (Project)
+import Types exposing (Project)
 import RemoteData exposing (WebData)
 import Routing.Router exposing (projectPath, projectsPath)
 import Styles.SharedStyles exposing (..)
@@ -13,8 +13,8 @@ import Styles.SharedStyles exposing (..)
     styleNamespace
 
 
-view : WebData (List Project) -> Html Msg
-view response =
+homeView : WebData (List Project) -> Html Msg
+homeView response =
     div [ id BodySection ]
         [ maybeList response
         , homeFooter

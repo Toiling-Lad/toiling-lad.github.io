@@ -3,11 +3,11 @@ module Pages.Project exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Msgs exposing (Msg)
-import Models exposing (Project, initialModel)
+import Types exposing (Project, Carousel)
 import Routing.Router exposing (projectPath)
 import Routing.Helpers exposing (getProjectById)
 import RemoteData exposing (WebData)
-import Carousel exposing (Carousel, fromList)
+import Carousel exposing (fromList)
 import Styles.SharedStyles exposing (..)
 
 
@@ -15,8 +15,8 @@ import Styles.SharedStyles exposing (..)
     styleNamespace
 
 
-view : Project -> WebData (List Project) -> Html Msg
-view project projects =
+projectView : Project -> WebData (List Project) -> Html Msg
+projectView project projects =
     div [ id BodySection ]
         [ maybeList project projects
         ]
@@ -59,7 +59,7 @@ form project projects =
                 Ok carousel ->
                     div []
                         [ div [ id ProjectContainer ]
-                            [ projectView project
+                            [ projectContainer project
                             ]
                         , div [ id FooterSection ]
                             [ nextProject carousel.next projects
@@ -69,8 +69,8 @@ form project projects =
         carouselView
 
 
-projectView : Project -> Html Msg
-projectView project =
+projectContainer : Project -> Html Msg
+projectContainer project =
     div
         []
         [ div [ id LandingSection ]
