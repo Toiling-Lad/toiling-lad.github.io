@@ -12877,6 +12877,28 @@ var _rtfeldman$elm_css_helpers$Html_CssHelpers$Namespace = F4(
 		return {$class: a, classList: b, id: c, name: d};
 	});
 
+var _user$project$Types$Model = F4(
+	function (a, b, c, d) {
+		return {projects: a, route: b, scroll: c, error: d};
+	});
+var _user$project$Types$ScrollProperties = F3(
+	function (a, b, c) {
+		return {scrollTop: a, scrollHeight: b, clientHeight: c};
+	});
+var _user$project$Types$Project = F7(
+	function (a, b, c, d, e, f, g) {
+		return {id: a, name: b, description: c, img: d, width: e, intro: f, tag: g};
+	});
+var _user$project$Types$Carousel = F4(
+	function (a, b, c, d) {
+		return {previous: a, current: b, next: c, rest: d};
+	});
+var _user$project$Types$NotFoundRoute = {ctor: 'NotFoundRoute'};
+var _user$project$Types$ProjectRoute = function (a) {
+	return {ctor: 'ProjectRoute', _0: a};
+};
+var _user$project$Types$ProjectsRoute = {ctor: 'ProjectsRoute'};
+
 var _user$project$Carousel$fromList = F2(
 	function (needle, list) {
 		var recurse = F3(
@@ -12984,32 +13006,11 @@ var _user$project$Carousel$onwards = function (_p10) {
 		_elm_lang$core$List$head(_p14));
 	return {previous: _p11.current, current: _p11.next, next: newNext, rest: newRest};
 };
-var _user$project$Carousel$Carousel = F4(
-	function (a, b, c, d) {
-		return {previous: a, current: b, next: c, rest: d};
-	});
 
 var _user$project$Models$initScroll = {scrollTop: 0, scrollHeight: 0, clientHeight: 0};
 var _user$project$Models$initialModel = function (route) {
 	return {projects: _krisajenkins$remotedata$RemoteData$Loading, route: route, scroll: _user$project$Models$initScroll, error: _elm_lang$core$Maybe$Nothing};
 };
-var _user$project$Models$Model = F4(
-	function (a, b, c, d) {
-		return {projects: a, route: b, scroll: c, error: d};
-	});
-var _user$project$Models$Project = F7(
-	function (a, b, c, d, e, f, g) {
-		return {id: a, name: b, description: c, img: d, width: e, intro: f, tag: g};
-	});
-var _user$project$Models$ScrollProperties = F3(
-	function (a, b, c) {
-		return {scrollTop: a, scrollHeight: b, clientHeight: c};
-	});
-var _user$project$Models$NotFoundRoute = {ctor: 'NotFoundRoute'};
-var _user$project$Models$ProjectRoute = function (a) {
-	return {ctor: 'ProjectRoute', _0: a};
-};
-var _user$project$Models$ProjectsRoute = {ctor: 'ProjectsRoute'};
 
 var _user$project$Msgs$OnScroll = function (a) {
 	return {ctor: 'OnScroll', _0: a};
@@ -13028,12 +13029,12 @@ var _user$project$Routing_Router$projectsPath = '#';
 var _user$project$Routing_Router$matchers = _evancz$url_parser$UrlParser$oneOf(
 	{
 		ctor: '::',
-		_0: A2(_evancz$url_parser$UrlParser$map, _user$project$Models$ProjectsRoute, _evancz$url_parser$UrlParser$top),
+		_0: A2(_evancz$url_parser$UrlParser$map, _user$project$Types$ProjectsRoute, _evancz$url_parser$UrlParser$top),
 		_1: {
 			ctor: '::',
 			_0: A2(
 				_evancz$url_parser$UrlParser$map,
-				_user$project$Models$ProjectRoute,
+				_user$project$Types$ProjectRoute,
 				A2(
 					_evancz$url_parser$UrlParser_ops['</>'],
 					_evancz$url_parser$UrlParser$s('projects'),
@@ -13042,7 +13043,7 @@ var _user$project$Routing_Router$matchers = _evancz$url_parser$UrlParser$oneOf(
 				ctor: '::',
 				_0: A2(
 					_evancz$url_parser$UrlParser$map,
-					_user$project$Models$ProjectsRoute,
+					_user$project$Types$ProjectsRoute,
 					_evancz$url_parser$UrlParser$s('projects')),
 				_1: {ctor: '[]'}
 			}
@@ -13053,7 +13054,7 @@ var _user$project$Routing_Router$parseLocation = function (location) {
 	if (_p0.ctor === 'Just') {
 		return _p0._0;
 	} else {
-		return _user$project$Models$NotFoundRoute;
+		return _user$project$Types$NotFoundRoute;
 	}
 };
 
@@ -13103,7 +13104,7 @@ var _user$project$Routing_Helpers$projectDecoder = A3(
 							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
 							'id',
 							_elm_lang$core$Json_Decode$string,
-							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Models$Project))))))));
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Types$Project))))))));
 var _user$project$Routing_Helpers$projectsDecoder = _elm_lang$core$Json_Decode$list(_user$project$Routing_Helpers$projectDecoder);
 var _user$project$Routing_Helpers$fetchProjectsUrl = '/api/db.json';
 var _user$project$Routing_Helpers$fetchProjects = A3(_ohanhi$remotedata_http$RemoteData_Http$get, _user$project$Routing_Helpers$fetchProjectsUrl, _user$project$Msgs$OnFetchProjects, _user$project$Routing_Helpers$projectsDecoder);
@@ -13148,7 +13149,7 @@ var _user$project$Pages_Project$projectFooter = A2(
 		_1: {ctor: '[]'}
 	},
 	{ctor: '[]'});
-var _user$project$Pages_Project$projectView = function (project) {
+var _user$project$Pages_Project$projectContainer = function (project) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
@@ -13497,7 +13498,7 @@ var _user$project$Pages_Project$form = F2(
 							},
 							{
 								ctor: '::',
-								_0: _user$project$Pages_Project$projectView(project),
+								_0: _user$project$Pages_Project$projectContainer(project),
 								_1: {ctor: '[]'}
 							}),
 						_1: {
@@ -13536,7 +13537,7 @@ var _user$project$Pages_Project$maybeList = F2(
 					_elm_lang$core$Basics$toString(_p2._0));
 		}
 	});
-var _user$project$Pages_Project$view = F2(
+var _user$project$Pages_Project$projectView = F2(
 	function (project, projects) {
 		return A2(
 			_elm_lang$html$Html$div,
@@ -13591,19 +13592,27 @@ var _user$project$Pages_Home$homeFooter = A2(
 			},
 			{
 				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$a,
-					{
+				_0: _elm_lang$html$Html$text('Checkout the '),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$a,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$href('https://github.com/Toiling-Lad/toiling-lad.github.io'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('source'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
 						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$href('https://github.com/Toiling-Lad/toiling-lad.github.io'),
+						_0: _elm_lang$html$Html$text('!'),
 						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('Link to sauce!'),
-						_1: {ctor: '[]'}
-					}),
-				_1: {ctor: '[]'}
+					}
+				}
 			}),
 		_1: {ctor: '[]'}
 	});
@@ -13805,7 +13814,7 @@ var _user$project$Pages_Home$maybeList = function (response) {
 				_elm_lang$core$Basics$toString(_p1._0));
 	}
 };
-var _user$project$Pages_Home$view = function (response) {
+var _user$project$Pages_Home$homeView = function (response) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{
@@ -13858,9 +13867,9 @@ var _user$project$View$projectPage = F2(
 						_p1._0));
 				var _p2 = maybeProject;
 				if (_p2.ctor === 'Just') {
-					return A2(_user$project$Pages_Project$view, _p2._0, model.projects);
+					return A2(_user$project$Pages_Project$projectView, _p2._0, model.projects);
 				} else {
-					return _user$project$Pages_Home$view(model.projects);
+					return _user$project$Pages_Home$homeView(model.projects);
 				}
 			default:
 				return _elm_lang$html$Html$text(
@@ -13871,7 +13880,7 @@ var _user$project$View$page = function (model) {
 	var _p3 = model.route;
 	switch (_p3.ctor) {
 		case 'ProjectsRoute':
-			return _user$project$Pages_Home$view(model.projects);
+			return _user$project$Pages_Home$homeView(model.projects);
 		case 'ProjectRoute':
 			return A2(_user$project$View$projectPage, model, _p3._0);
 		default:
