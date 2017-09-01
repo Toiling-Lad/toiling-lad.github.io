@@ -867,7 +867,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n    position: relative;\n    min-height: 100vh;\n    background-color: #000000;\n    overflow-y: scroll;\n}\n\n#HeaderSection {\n    position: fixed;\n    top: 0rem;\n    width: 100%;\n    height: 8rem;\n    overflow: hidden;\n    z-index: 2;\n}\n\n#BodySection {\n    padding-top: 8rem;\n    background-color: #ffffff;\n    padding-bottom: 100vh;\n    margin: auto;\n    z-index: 1;\n}\n\n#FooterSection {\n    position: absolute;\n    bottom: 0rem;\n    width: 100%;\n    height: 100vh;\n    background-color: #000000;\n    z-index: 0;\n}\n\n#LandingSection {\n    height: 100vh;\n    padding: 3.5rem;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n#ContactSection {\n    background-color: #ffffff;\n    height: 100%;\n}\n\n#NavContainer {\n    padding: 3.5rem;\n    height: 100%;\n    background-color: transparent;\n}\n\n#FlexContainer {\n    margin: 0rem;\n    width: 100%;\n    list-style: none;\n    padding-right: 1.75rem;\n    padding-left: 1.75rem;\n    align-items: stretch;\n    display: inline-flex;\n    justify-content: center;\n    flex-wrap: wrap;\n}\n\n#FlexHeader {\n    margin: 0.5rem;\n    flex-grow: 1;\n    text-align: center;\n    height: 8rem;\n    text-decoration: none;\n}\n\n#FlexSecondaryHeader {\n    margin: 0.5rem;\n    flex-grow: 1;\n    text-align: center;\n    height: 4rem;\n    text-decoration: none;\n}\n\n#FlexItem {\n    margin: 1.75rem;\n    position: relative;\n    width: 44%;\n    display: flex;\n    flex-direction: column;\n    height: 95vh;\n    flex-grow: 1;\n}\n\n#ItemImage {\n    position: relative;\n    background-size: cover;\n    background-position: center;\n    height: 100%;\n}\n\n#ProjectContainer {\n    padding: 0rem;\n    margin: 0rem;\n    width: 100%;\n    list-style: none;\n    flex-grow: 1;\n    display: inline-flex;\n    justify-content: center;\n}\n\n#ProjectImage {\n    position: relative;\n    background-size: cover;\n    background-position: center;\n    flex-grow: 1;\n    height: 50rem;\n}\n\n#ProjectText {\n    position: relative;\n    color: #000000;\n    display: block;\n    margin: auto;\n    max-width: 640px;\n    font-size: 2.5rem;\n    text-decoration: none;\n}\n\n#ProjectTitle {\n    position: relative;\n    color: #000000;\n    display: block;\n    margin: auto;\n    bottom: 8rem;\n    max-width: 640px;\n    font-size: 2rem;\n    text-decoration: none;\n    line-height: 4rem;\n}\n\n#WorkContainer {\n    margin-top: 1.5rem;\n}\n\n#WorkTitle {\n    color: #000000;\n    text-align: left;\n    font-size: 1rem;\n    text-decoration: none;\n}\n\n#WorkIntro {\n    color: #4E4F52;\n    margin-top: 1.5rem;\n    text-align: left;\n    font-size: 1rem;\n    text-decoration: none;\n}\n\n#WorkTag {\n    margin-top: 1.5rem;\n    color: #909398;\n    text-align: left;\n    font-size: 0.9rem;\n    text-decoration: none;\n}\n\n#ProjectDescription {\n    position: relative;\n    color: #000000;\n    max-width: 640px;\n    top: 50%;\n    line-height: 1.75rem;\n    text-decoration: none;\n}\n\n#TextCenter {\n    position: relative;\n    text-align: center;\n    color: #000000;\n    top: 50%;\n    text-decoration: none;\n    font-size: 2rem;\n}\n\n#Image {\n    display: block;\n    align-self: center;\n    width: 100%;\n    height: 100%;\n    overflow: visible;\n}\n\n#Overlay {\n    position: absolute;\n    top: 0rem;\n    bottom: 0rem;\n    left: 0rem;\n    right: 0rem;\n    height: 100%;\n    width: 100%;\n    opacity: 0;\n    background-color: rgba(255, 255, 255, 0.8);\n}\n\n#Overlay:hover {\n    opacity: 1;\n}\n\n#NavTitle {\n    position: relative;\n    text-align: left;\n    color: #000000;\n    text-decoration: none;\n    display: flex;\n    font-size: 2rem;\n    align-items: center;\n}\n\n#Slogan {\n    position: relative;\n    text-align: center;\n    color: #000000;\n    display: block;\n    bottom: 8rem;\n    text-decoration: none;\n    font-size: 4.5rem;\n}\n\n#FooterText {\n    position: relative;\n    text-align: center;\n    color: #000000;\n    display: block;\n    top: 40%;\n    text-decoration: none;\n    font-size: 4.5rem;\n}\n\n#FooterNext {\n    position: relative;\n    text-align: center;\n    color: #ffffff;\n    display: block;\n    text-decoration: none;\n    font-size: 5rem;\n}\n\n#SvgIcon {\n    width: 3rem;\n    height: 1.3rem;\n}\n", ""]);
+exports.push([module.i, "body {\n    position: relative;\n    min-height: 100vh;\n    background-color: #ffffff;\n    overflow-y: scroll;\n}\n\n#HeaderSection {\n    position: fixed;\n    top: 0rem;\n    width: 100%;\n    height: 8rem;\n    overflow: hidden;\n    z-index: 2;\n}\n\n#BodySection {\n    padding-top: 8rem;\n    background-color: #ffffff;\n    padding-bottom: 100vh;\n    margin: auto;\n    z-index: 1;\n}\n\n#FooterSection {\n    position: absolute;\n    bottom: 0rem;\n    width: 100%;\n    height: 100vh;\n    background-color: #ffffff;\n    z-index: 0;\n    padding: 3.5rem;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n#LandingSection {\n    height: 100vh;\n    padding: 3.5rem;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n#ContactSection {\n    background-color: #ffffff;\n    height: 100%;\n}\n\n#NavContainer {\n    padding: 3.5rem;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: rgba(255, 255, 255, 0.8);\n}\n\n#FlexContainer {\n    margin: 0rem;\n    width: 100%;\n    list-style: none;\n    padding-right: 1.75rem;\n    padding-left: 1.75rem;\n    align-items: stretch;\n    display: inline-flex;\n    justify-content: center;\n    flex-wrap: wrap;\n}\n\n#FlexHeader {\n    margin: 0.5rem;\n    flex-grow: 1;\n    text-align: center;\n    height: 8rem;\n    text-decoration: none;\n}\n\n#FlexSecondaryHeader {\n    margin: 0.5rem;\n    flex-grow: 1;\n    text-align: center;\n    height: 4rem;\n    text-decoration: none;\n}\n\n#FlexItem {\n    margin: 1.75rem;\n    position: relative;\n    width: 44%;\n    display: flex;\n    flex-direction: column;\n    height: 95vh;\n    flex-grow: 1;\n}\n\n#ItemImage {\n    position: relative;\n    background-size: cover;\n    background-position: center;\n    height: 100%;\n}\n\n#ProjectContainer {\n    padding: 0rem;\n    margin: 0rem;\n    width: 100%;\n    list-style: none;\n    flex-grow: 1;\n    display: inline-flex;\n    justify-content: center;\n}\n\n#ProjectImage {\n    position: relative;\n    background-size: cover;\n    background-position: center;\n    flex-grow: 1;\n    height: 50rem;\n}\n\n#ProjectText {\n    position: relative;\n    color: #000000;\n    display: block;\n    margin: auto;\n    max-width: 640px;\n    font-size: 2.5rem;\n    text-decoration: none;\n}\n\n#ProjectTitle {\n    position: relative;\n    color: #000000;\n    display: block;\n    margin: auto;\n    bottom: 8rem;\n    max-width: 640px;\n    font-size: 2rem;\n    text-decoration: none;\n    line-height: 4rem;\n}\n\n#WorkContainer {\n    margin-top: 1.5rem;\n}\n\n#WorkTitle {\n    color: #000000;\n    text-align: left;\n    font-size: 2rem;\n    text-decoration: none;\n}\n\n#WorkIntro {\n    color: #4E4F52;\n    margin-top: 1.5rem;\n    text-align: left;\n    font-size: 2rem;\n    text-decoration: none;\n}\n\n#WorkTag {\n    margin-top: 1.5rem;\n    color: #909398;\n    text-align: left;\n    font-size: 1.5rem;\n    text-decoration: none;\n}\n\n#ProjectDescription {\n    position: relative;\n    color: #000000;\n    max-width: 640px;\n    top: 50%;\n    line-height: 1.75rem;\n    text-decoration: none;\n}\n\n#TextCenter {\n    position: relative;\n    text-align: center;\n    color: #000000;\n    top: 50%;\n    text-decoration: none;\n    font-size: 2rem;\n}\n\n#Image {\n    display: block;\n    align-self: center;\n    width: 100%;\n    height: 100%;\n    overflow: visible;\n}\n\n#Overlay {\n    position: absolute;\n    top: 0rem;\n    bottom: 0rem;\n    left: 0rem;\n    right: 0rem;\n    height: 100%;\n    width: 100%;\n    opacity: 0;\n    background-color: rgba(255, 255, 255, 0.8);\n}\n\n#Overlay:hover {\n    opacity: 1;\n}\n\n#NavTitle {\n    color: #000000;\n    flex: 1;\n    text-align: center;\n    padding-right: 3rem;\n    text-decoration: none;\n    font-size: 2rem;\n}\n\n#NavIcon {\n    position: relative;\n    text-align: left;\n    color: #000000;\n    text-decoration: none;\n    display: flex;\n    font-size: 2rem;\n    align-items: center;\n}\n\n#Slogan {\n    position: relative;\n    text-align: center;\n    color: #000000;\n    display: block;\n    bottom: 8rem;\n    text-decoration: none;\n    font-size: 4.5rem;\n}\n\n#FooterText {\n    text-align: center;\n    text-decoration: none;\n    font-size: 2rem;\n}\n\n#FooterNext {\n    position: relative;\n    text-align: center;\n    color: #000000;\n    display: block;\n    text-decoration: none;\n    font-size: 5rem;\n}\n\n#SvgIcon {\n    width: 3rem;\n    height: 1.3rem;\n}\n", ""]);
 
 // exports
 
@@ -902,11 +902,6 @@ exports.init = function init(app) {
         var delta = 20;
         var didScroll;
         var st = scrollTop;
-        document.getElementById('NavTitle').style.color = "black";
-
-        if (document.querySelector('svg#SvgIcon > svg > path')) {
-            document.querySelector('svg#SvgIcon > svg > path').style.fill = "black";
-        }
 
         if (Math.abs(lastScrollTop - st) <= delta)
             return;
@@ -925,9 +920,6 @@ exports.init = function init(app) {
                 header.style.opacity = 1;
                 header.style.transition = "all 300ms linear";
                 header.style.visibility = "visible";
-                document.getElementById('NavTitle').style.color = "white";
-                document.querySelector('svg#SvgIcon > svg > path').style.fill = "white";
-
             }
         } else {
             // Scroll Up
@@ -963,46 +955,6 @@ exports.init = function init(app) {
         };
     }
 
-    function footerNext(scrollTop, scrollHeight, clientHeight) {
-        var footer = document.getElementById('FooterNext');
-        var footerSection = document.getElementById('FooterSection');
-
-        var windowHeight = document.documentElement.clientHeight;
-        var windowTopPosition = document.body.scrollTop;
-        var windowBottomPosition = (windowTopPosition + windowHeight);
-
-        var footerHeight = footerSection.clientHeight;
-        var footerTopPosition = footerSection.offsetTop;
-        var footerBottomPosition = (footerTopPosition + footerHeight);
-
-        if ((footerBottomPosition >= windowTopPosition) && (footerTopPosition <= windowBottomPosition)) {
-            if ((windowBottomPosition - footerTopPosition) >= (windowHeight)) {
-                setTranslate(0, (windowHeight / 2), footer)
-            } else {
-                setTranslate(0, ((windowBottomPosition - footerTopPosition) / 2), footer)
-            }
-
-        } else
-            if (footerBottomPosition >= windowTopPosition) {
-                setTranslate(0, -100, footer)
-
-            }
-    }
-
-
-    function setTranslate(xPos, yPos, el) {
-        el.style.transform = `matrix3d( ${(yPos + 2) / 500}, 0, 0, 0, 
-                                        0, ${(yPos + 1) / 500}, 0, 0, 
-                                        0, 0, 20, 0, 
-                                        0, ${(yPos + 1)}, 0, 1)`;
-        el.style.transition = "all 200ms linear";
-
-    }
-
-
-
-
-
     function onScroll() {
         if (document.querySelector('body')) {
             var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -1019,7 +971,6 @@ exports.init = function init(app) {
 
         header(scrollTop, scrollHeight, clientHeight)
         items()
-        footerNext(scrollTop, scrollHeight, clientHeight)
 
 
 
@@ -12877,6 +12828,28 @@ var _rtfeldman$elm_css_helpers$Html_CssHelpers$Namespace = F4(
 		return {$class: a, classList: b, id: c, name: d};
 	});
 
+var _user$project$Types$Model = F4(
+	function (a, b, c, d) {
+		return {projects: a, route: b, scroll: c, error: d};
+	});
+var _user$project$Types$ScrollProperties = F3(
+	function (a, b, c) {
+		return {scrollTop: a, scrollHeight: b, clientHeight: c};
+	});
+var _user$project$Types$Project = F7(
+	function (a, b, c, d, e, f, g) {
+		return {id: a, name: b, description: c, img: d, width: e, intro: f, tag: g};
+	});
+var _user$project$Types$Carousel = F4(
+	function (a, b, c, d) {
+		return {previous: a, current: b, next: c, rest: d};
+	});
+var _user$project$Types$NotFoundRoute = {ctor: 'NotFoundRoute'};
+var _user$project$Types$ProjectRoute = function (a) {
+	return {ctor: 'ProjectRoute', _0: a};
+};
+var _user$project$Types$ProjectsRoute = {ctor: 'ProjectsRoute'};
+
 var _user$project$Carousel$fromList = F2(
 	function (needle, list) {
 		var recurse = F3(
@@ -12984,32 +12957,11 @@ var _user$project$Carousel$onwards = function (_p10) {
 		_elm_lang$core$List$head(_p14));
 	return {previous: _p11.current, current: _p11.next, next: newNext, rest: newRest};
 };
-var _user$project$Carousel$Carousel = F4(
-	function (a, b, c, d) {
-		return {previous: a, current: b, next: c, rest: d};
-	});
 
 var _user$project$Models$initScroll = {scrollTop: 0, scrollHeight: 0, clientHeight: 0};
 var _user$project$Models$initialModel = function (route) {
 	return {projects: _krisajenkins$remotedata$RemoteData$Loading, route: route, scroll: _user$project$Models$initScroll, error: _elm_lang$core$Maybe$Nothing};
 };
-var _user$project$Models$Model = F4(
-	function (a, b, c, d) {
-		return {projects: a, route: b, scroll: c, error: d};
-	});
-var _user$project$Models$Project = F7(
-	function (a, b, c, d, e, f, g) {
-		return {id: a, name: b, description: c, img: d, width: e, intro: f, tag: g};
-	});
-var _user$project$Models$ScrollProperties = F3(
-	function (a, b, c) {
-		return {scrollTop: a, scrollHeight: b, clientHeight: c};
-	});
-var _user$project$Models$NotFoundRoute = {ctor: 'NotFoundRoute'};
-var _user$project$Models$ProjectRoute = function (a) {
-	return {ctor: 'ProjectRoute', _0: a};
-};
-var _user$project$Models$ProjectsRoute = {ctor: 'ProjectsRoute'};
 
 var _user$project$Msgs$OnScroll = function (a) {
 	return {ctor: 'OnScroll', _0: a};
@@ -13028,12 +12980,12 @@ var _user$project$Routing_Router$projectsPath = '#';
 var _user$project$Routing_Router$matchers = _evancz$url_parser$UrlParser$oneOf(
 	{
 		ctor: '::',
-		_0: A2(_evancz$url_parser$UrlParser$map, _user$project$Models$ProjectsRoute, _evancz$url_parser$UrlParser$top),
+		_0: A2(_evancz$url_parser$UrlParser$map, _user$project$Types$ProjectsRoute, _evancz$url_parser$UrlParser$top),
 		_1: {
 			ctor: '::',
 			_0: A2(
 				_evancz$url_parser$UrlParser$map,
-				_user$project$Models$ProjectRoute,
+				_user$project$Types$ProjectRoute,
 				A2(
 					_evancz$url_parser$UrlParser_ops['</>'],
 					_evancz$url_parser$UrlParser$s('projects'),
@@ -13042,7 +12994,7 @@ var _user$project$Routing_Router$matchers = _evancz$url_parser$UrlParser$oneOf(
 				ctor: '::',
 				_0: A2(
 					_evancz$url_parser$UrlParser$map,
-					_user$project$Models$ProjectsRoute,
+					_user$project$Types$ProjectsRoute,
 					_evancz$url_parser$UrlParser$s('projects')),
 				_1: {ctor: '[]'}
 			}
@@ -13053,7 +13005,7 @@ var _user$project$Routing_Router$parseLocation = function (location) {
 	if (_p0.ctor === 'Just') {
 		return _p0._0;
 	} else {
-		return _user$project$Models$NotFoundRoute;
+		return _user$project$Types$NotFoundRoute;
 	}
 };
 
@@ -13103,7 +13055,7 @@ var _user$project$Routing_Helpers$projectDecoder = A3(
 							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
 							'id',
 							_elm_lang$core$Json_Decode$string,
-							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Models$Project))))))));
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Types$Project))))))));
 var _user$project$Routing_Helpers$projectsDecoder = _elm_lang$core$Json_Decode$list(_user$project$Routing_Helpers$projectDecoder);
 var _user$project$Routing_Helpers$fetchProjectsUrl = '/api/db.json';
 var _user$project$Routing_Helpers$fetchProjects = A3(_ohanhi$remotedata_http$RemoteData_Http$get, _user$project$Routing_Helpers$fetchProjectsUrl, _user$project$Msgs$OnFetchProjects, _user$project$Routing_Helpers$projectsDecoder);
@@ -13113,6 +13065,7 @@ var _user$project$Styles_SharedStyles$SvgIcon = {ctor: 'SvgIcon'};
 var _user$project$Styles_SharedStyles$FooterNext = {ctor: 'FooterNext'};
 var _user$project$Styles_SharedStyles$FooterText = {ctor: 'FooterText'};
 var _user$project$Styles_SharedStyles$Slogan = {ctor: 'Slogan'};
+var _user$project$Styles_SharedStyles$NavIcon = {ctor: 'NavIcon'};
 var _user$project$Styles_SharedStyles$NavTitle = {ctor: 'NavTitle'};
 var _user$project$Styles_SharedStyles$Overlay = {ctor: 'Overlay'};
 var _user$project$Styles_SharedStyles$Image = {ctor: 'Image'};
@@ -13148,7 +13101,7 @@ var _user$project$Pages_Project$projectFooter = A2(
 		_1: {ctor: '[]'}
 	},
 	{ctor: '[]'});
-var _user$project$Pages_Project$projectView = function (project) {
+var _user$project$Pages_Project$projectContainer = function (project) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
@@ -13450,7 +13403,7 @@ var _user$project$Pages_Project$nextProject = F2(
 			_elm_lang$html$Html$a,
 			{
 				ctor: '::',
-				_0: _user$project$Pages_Project$id(_user$project$Styles_SharedStyles$FooterNext),
+				_0: _user$project$Pages_Project$id(_user$project$Styles_SharedStyles$FooterText),
 				_1: {
 					ctor: '::',
 					_0: _elm_lang$html$Html_Attributes$href(path),
@@ -13497,7 +13450,7 @@ var _user$project$Pages_Project$form = F2(
 							},
 							{
 								ctor: '::',
-								_0: _user$project$Pages_Project$projectView(project),
+								_0: _user$project$Pages_Project$projectContainer(project),
 								_1: {ctor: '[]'}
 							}),
 						_1: {
@@ -13536,7 +13489,7 @@ var _user$project$Pages_Project$maybeList = F2(
 					_elm_lang$core$Basics$toString(_p2._0));
 		}
 	});
-var _user$project$Pages_Project$view = F2(
+var _user$project$Pages_Project$projectView = F2(
 	function (project, projects) {
 		return A2(
 			_elm_lang$html$Html$div,
@@ -13560,39 +13513,40 @@ var _user$project$Pages_Home$homeFooter = A2(
 	{
 		ctor: '::',
 		_0: _user$project$Pages_Home$id(_user$project$Styles_SharedStyles$FooterSection),
-		_1: {
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$style(
-				{
-					ctor: '::',
-					_0: {ctor: '_Tuple2', _0: 'background-color', _1: 'white'},
-					_1: {ctor: '[]'}
-				}),
-			_1: {ctor: '[]'}
-		}
+		_1: {ctor: '[]'}
 	},
 	{
 		ctor: '::',
 		_0: A2(
-			_elm_lang$html$Html$a,
+			_elm_lang$html$Html$p,
 			{
 				ctor: '::',
-				_0: _user$project$Pages_Home$id(_user$project$Styles_SharedStyles$FooterNext),
-				_1: {
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$style(
-						{
-							ctor: '::',
-							_0: {ctor: '_Tuple2', _0: 'color', _1: 'black'},
-							_1: {ctor: '[]'}
-						}),
-					_1: {ctor: '[]'}
-				}
+				_0: _user$project$Pages_Home$id(_user$project$Styles_SharedStyles$FooterText),
+				_1: {ctor: '[]'}
 			},
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html$text('... and more to come'),
-				_1: {ctor: '[]'}
+				_0: _elm_lang$html$Html$text(' Duis aute irure dolor in reprehenderit in voluptate '),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$a,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$href('https://github.com/Toiling-Lad/toiling-lad.github.io'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('source'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('!'),
+						_1: {ctor: '[]'}
+					}
+				}
 			}),
 		_1: {ctor: '[]'}
 	});
@@ -13794,7 +13748,7 @@ var _user$project$Pages_Home$maybeList = function (response) {
 				_elm_lang$core$Basics$toString(_p1._0));
 	}
 };
-var _user$project$Pages_Home$view = function (response) {
+var _user$project$Pages_Home$homeView = function (response) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{
@@ -13847,9 +13801,9 @@ var _user$project$View$projectPage = F2(
 						_p1._0));
 				var _p2 = maybeProject;
 				if (_p2.ctor === 'Just') {
-					return A2(_user$project$Pages_Project$view, _p2._0, model.projects);
+					return A2(_user$project$Pages_Project$projectView, _p2._0, model.projects);
 				} else {
-					return _user$project$Pages_Home$view(model.projects);
+					return _user$project$Pages_Home$homeView(model.projects);
 				}
 			default:
 				return _elm_lang$html$Html$text(
@@ -13860,7 +13814,7 @@ var _user$project$View$page = function (model) {
 	var _p3 = model.route;
 	switch (_p3.ctor) {
 		case 'ProjectsRoute':
-			return _user$project$Pages_Home$view(model.projects);
+			return _user$project$Pages_Home$homeView(model.projects);
 		case 'ProjectRoute':
 			return A2(_user$project$View$projectPage, model, _p3._0);
 		default:
@@ -13912,7 +13866,7 @@ var _user$project$View$nav = function (model) {
 				_elm_lang$html$Html$a,
 				{
 					ctor: '::',
-					_0: _user$project$View$id(_user$project$Styles_SharedStyles$NavTitle),
+					_0: _user$project$View$id(_user$project$Styles_SharedStyles$NavIcon),
 					_1: {
 						ctor: '::',
 						_0: _elm_lang$html$Html_Attributes$href(_user$project$Routing_Router$projectsPath),
@@ -13922,17 +13876,32 @@ var _user$project$View$nav = function (model) {
 				{
 					ctor: '::',
 					_0: svgIcon,
-					_1: {
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$a,
+					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text('projects'),
+						_0: _user$project$View$id(_user$project$Styles_SharedStyles$NavTitle),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$href(_user$project$Routing_Router$projectsPath),
+							_1: {ctor: '[]'}
+						}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('My Projects'),
 						_1: {
 							ctor: '::',
 							_0: _user$project$View$errorView(model.error),
 							_1: {ctor: '[]'}
 						}
-					}
-				}),
-			_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
 		});
 };
 var _user$project$View$view = function (model) {

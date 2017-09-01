@@ -1,6 +1,6 @@
 module Msgs exposing (..)
 
-import Models exposing (Project, ScrollProperties)
+import Types exposing (Project, ScrollProperties)
 import Navigation exposing (Location)
 import RemoteData exposing (WebData)
 

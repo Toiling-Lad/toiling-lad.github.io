@@ -28,6 +28,7 @@ type CssIds
     | Image
     | Overlay
     | NavTitle
+    | NavIcon
     | Slogan
     | FooterText
     | FooterNext

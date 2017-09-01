@@ -9,11 +9,6 @@ exports.init = function init(app) {
         var delta = 20;
         var didScroll;
         var st = scrollTop;
-        document.getElementById('NavTitle').style.color = "black";
-
-        if (document.querySelector('svg#SvgIcon > svg > path')) {
-            document.querySelector('svg#SvgIcon > svg > path').style.fill = "black";
-        }
 
         if (Math.abs(lastScrollTop - st) <= delta)
             return;
@@ -32,9 +27,6 @@ exports.init = function init(app) {
                 header.style.opacity = 1;
                 header.style.transition = "all 300ms linear";
                 header.style.visibility = "visible";
-                document.getElementById('NavTitle').style.color = "white";
-                document.querySelector('svg#SvgIcon > svg > path').style.fill = "white";
-
             }
         } else {
             // Scroll Up
@@ -70,46 +62,6 @@ exports.init = function init(app) {
         };
     }
 
-    function footerNext(scrollTop, scrollHeight, clientHeight) {
-        var footer = document.getElementById('FooterNext');
-        var footerSection = document.getElementById('FooterSection');
-
-        var windowHeight = document.documentElement.clientHeight;
-        var windowTopPosition = document.body.scrollTop;
-        var windowBottomPosition = (windowTopPosition + windowHeight);
-
-        var footerHeight = footerSection.clientHeight;
-        var footerTopPosition = footerSection.offsetTop;
-        var footerBottomPosition = (footerTopPosition + footerHeight);
-
-        if ((footerBottomPosition >= windowTopPosition) && (footerTopPosition <= windowBottomPosition)) {
-            if ((windowBottomPosition - footerTopPosition) >= (windowHeight)) {
-                setTranslate(0, (windowHeight / 2), footer)
-            } else {
-                setTranslate(0, ((windowBottomPosition - footerTopPosition) / 2), footer)
-            }
-
-        } else
-            if (footerBottomPosition >= windowTopPosition) {
-                setTranslate(0, -100, footer)
-
-            }
-    }
-
-
-    function setTranslate(xPos, yPos, el) {
-        el.style.transform = `matrix3d( ${(yPos + 2) / 500}, 0, 0, 0, 
-                                        0, ${(yPos + 1) / 500}, 0, 0, 
-                                        0, 0, 20, 0, 
-                                        0, ${(yPos + 1)}, 0, 1)`;
-        el.style.transition = "all 200ms linear";
-
-    }
-
-
-
-
-
     function onScroll() {
         if (document.querySelector('body')) {
             var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -126,7 +78,6 @@ exports.init = function init(app) {
 
         header(scrollTop, scrollHeight, clientHeight)
         items()
-        footerNext(scrollTop, scrollHeight, clientHeight)
 
 
 

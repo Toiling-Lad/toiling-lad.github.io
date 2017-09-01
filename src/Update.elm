@@ -1,7 +1,7 @@
 module Update exposing (..)
 
-import Msgs exposing (Msg)
-import Models exposing (Model)
+import Msgs exposing (Msg(OnFetchProjects, OnLocationChange, OnScroll))
+import Types exposing (Model)
 import Routing.Router exposing (parseLocation)
 import Ports exposing (..)
 
@@ -9,15 +9,15 @@ import Ports exposing (..)
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        Msgs.OnFetchProjects response ->
+        OnFetchProjects response ->
             ( { model | projects = response }, Cmd.none )
 
-        Msgs.OnLocationChange location ->
+        OnLocationChange location ->
             let
                 newRoute =
                     parseLocation location
             in
                 ( { model | route = newRoute }, Ports.scrollToTop () )
 
-        Msgs.OnScroll scrollProperties ->
+        OnScroll scrollProperties ->
             ( { model | scroll = scrollProperties }, Cmd.none )

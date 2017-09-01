@@ -31,6 +31,7 @@ type CssIds
     | Image
     | Overlay
     | NavTitle
+    | NavIcon
     | Slogan
     | FooterText
     | FooterNext
@@ -42,8 +43,8 @@ css =
     (stylesheet << namespace styleNamespace.name)
         [ body
             [ position relative
-            , minHeight (vh 100)
-            , backgroundColor colorBlack
+            , minHeight fullHeight
+            , backgroundColor colorWhite
             , overflowY scroll
             ]
         , id HeaderSection
@@ -57,7 +58,7 @@ css =
         , id BodySection
             [ paddingTop headerHeightLarge
             , backgroundColor colorWhite
-            , paddingBottom footerHeight
+            , paddingBottom fullHeight
             , margin auto
             , zIndex 1
             ]
@@ -65,12 +66,16 @@ css =
             [ position absolute
             , bottom (rem 0)
             , width (pct 100)
-            , height footerHeight
-            , backgroundColor colorBlack
+            , height fullHeight
+            , backgroundColor colorWhite
             , zIndex 0
+            , padding gapWidth
+            , displayFlex
+            , alignItems center
+            , justifyContent center
             ]
         , id LandingSection
-            [ height (vh 100)
+            [ height fullHeight
             , padding gapWidth
             , displayFlex
             , alignItems center
@@ -83,7 +88,10 @@ css =
         , id NavContainer
             [ padding gapWidth
             , height (pct 100)
-            , backgroundColor transparent
+            , displayFlex
+            , alignItems center
+            , justifyContent center
+            , backgroundColor colorTransparent
             ]
         , id FlexContainer
             [ margin (rem 0)
@@ -167,21 +175,21 @@ css =
         , id WorkTitle
             [ color colorBlack
             , textAlign left
-            , fontSize (rem 1)
+            , fontSize (rem 2)
             , textDecoration none
             ]
         , id WorkIntro
             [ color colorGrey
             , marginTop (rem 1.5)
             , textAlign left
-            , fontSize (rem 1)
+            , fontSize (rem 2)
             , textDecoration none
             ]
         , id WorkTag
             [ marginTop (rem 1.5)
             , color colorGreyLight
             , textAlign left
-            , fontSize (rem 0.9)
+            , fontSize (rem 1.5)
             , textDecoration none
             ]
         , id ProjectDescription
@@ -222,6 +230,14 @@ css =
                 ]
             ]
         , id NavTitle
+            [ color colorBlack
+            , flex (num 1)
+            , textAlign center
+            , paddingRight iconWidth
+            , textDecoration none
+            , fontSize (rem 2)
+            ]
+        , id NavIcon
             [ position relative
             , textAlign left
             , color colorBlack
@@ -240,24 +256,20 @@ css =
             , fontSize (rem 4.5)
             ]
         , id FooterText
-            [ position relative
-            , textAlign center
-            , color colorBlack
-            , display block
-            , top (pct 40)
+            [ textAlign center
             , textDecoration none
-            , fontSize (rem 4.5)
+            , fontSize (rem 2)
             ]
         , id FooterNext
             [ position relative
             , textAlign center
-            , color colorWhite
+            , color colorBlack
             , display block
             , textDecoration none
             , fontSize (rem 5)
             ]
         , id SvgIcon
-            [ width (rem 3)
+            [ width iconWidth
             , height (rem 1.3)
             ]
         ]
@@ -266,6 +278,11 @@ css =
 rem : Float -> Rem
 rem =
     Css.rem
+
+
+vw : Float -> Vw
+vw =
+    Css.vw
 
 
 zIndex : Int -> Style
@@ -332,6 +349,11 @@ gapWidthHalf =
     (rem 1.75)
 
 
-footerHeight : Vh
-footerHeight =
+iconWidth : Rem
+iconWidth =
+    (rem 3)
+
+
+fullHeight : Vh
+fullHeight =
     (vh 100)

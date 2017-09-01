@@ -1,18 +1,19 @@
 module Main exposing (..)
 
-import Models exposing (Model, initialModel)
+import Types exposing (Model)
+import Models exposing (initialModel)
 import View exposing (view)
-import Msgs exposing (Msg)
+import Msgs exposing (Msg(OnLocationChange, OnScroll))
 import Update exposing (update)
 import Routing.Helpers exposing (fetchProjects)
-import Navigation exposing (Location)
-import Routing.Router
+import Navigation exposing (Location, program)
+import Routing.Router exposing (parseLocation)
 import Ports exposing (onFeedScroll)
 
 
 main : Program Never Model Msg
 main =
-    Navigation.program Msgs.OnLocationChange
+    program OnLocationChange
         { init = init
         , view = view
         , update = update
@@ -24,11 +25,11 @@ init : Location -> ( Model, Cmd Msg )
 init location =
     let
         currentRoute =
-            Routing.Router.parseLocation location
+            parseLocation location
     in
         ( initialModel currentRoute, fetchProjects )
 
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    onFeedScroll Msgs.OnScroll
+    onFeedScroll OnScroll
