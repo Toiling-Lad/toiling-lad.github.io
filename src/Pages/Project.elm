@@ -144,7 +144,7 @@ nextProject projectName projects =
             getProjectById projectName projects
     in
         a
-            [ id FooterNext
+            [ id FooterText
             , href path
             ]
             [ text "Next project" ]

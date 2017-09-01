@@ -37,11 +37,15 @@ nav model =
             [ id NavContainer
             ]
             [ a
+                [ id NavIcon
+                , href projectsPath
+                ]
+                [ svgIcon ]
+            , a
                 [ id NavTitle
                 , href projectsPath
                 ]
-                [ svgIcon
-                , text "projects"
+                [ text "My Projects"
                 , errorView model.error
                 ]
             ]

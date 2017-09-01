@@ -24,14 +24,11 @@ homeView response =
 homeFooter : Html Msg
 homeFooter =
     section
-        [ id FooterSection
-        , style [ ( "background-color", "white" ) ]
-        ]
-        [ a
-            [ id FooterNext
-            , style [ ( "color", "black" ) ]
+        [ id FooterSection ]
+        [ p
+            [ id FooterText
             ]
-            [ text "Checkout the "
+            [ text " Duis aute irure dolor in reprehenderit in voluptate "
             , a [ href "https://github.com/Toiling-Lad/toiling-lad.github.io" ]
                 [ text "source"
                 ]

@@ -1,7 +1,7 @@
 body {
     position: relative;
     min-height: 100vh;
-    background-color: #000000;
+    background-color: #ffffff;
     overflow-y: scroll;
 }
 
@@ -27,8 +27,12 @@ body {
     bottom: 0rem;
     width: 100%;
     height: 100vh;
-    background-color: #000000;
+    background-color: #ffffff;
     z-index: 0;
+    padding: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #LandingSection {
@@ -47,7 +51,10 @@ body {
 #NavContainer {
     padding: 3.5rem;
     height: 100%;
-    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 #FlexContainer {
@@ -142,7 +149,7 @@ body {
 #WorkTitle {
     color: #000000;
     text-align: left;
-    font-size: 1rem;
+    font-size: 2rem;
     text-decoration: none;
 }
 
@@ -150,7 +157,7 @@ body {
     color: #4E4F52;
     margin-top: 1.5rem;
     text-align: left;
-    font-size: 1rem;
+    font-size: 2rem;
     text-decoration: none;
 }
 
@@ -158,7 +165,7 @@ body {
     margin-top: 1.5rem;
     color: #909398;
     text-align: left;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     text-decoration: none;
 }
 
@@ -205,6 +212,15 @@ body {
 }
 
 #NavTitle {
+    color: #000000;
+    flex: 1;
+    text-align: center;
+    padding-right: 3rem;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+#NavIcon {
     position: relative;
     text-align: left;
     color: #000000;
@@ -225,19 +241,15 @@ body {
 }
 
 #FooterText {
-    position: relative;
     text-align: center;
-    color: #000000;
-    display: block;
-    top: 40%;
     text-decoration: none;
-    font-size: 4.5rem;
+    font-size: 2rem;
 }
 
 #FooterNext {
     position: relative;
     text-align: center;
-    color: #ffffff;
+    color: #000000;
     display: block;
     text-decoration: none;
     font-size: 5rem;
